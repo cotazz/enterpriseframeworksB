@@ -18,6 +18,10 @@ namespace StudentDemo.Yo
              // Brian test
 
             // Exercises:
+            // sean test
+
+
+
             // 1. Add back in our constructor which takes name and age
             // 2. Create an array of Person called people and then create 
             //    some staff and students to add to that array
