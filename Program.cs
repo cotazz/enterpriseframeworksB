@@ -16,7 +16,7 @@ namespace StudentDemo.Yo
             Console.WriteLine(p.toString());
             Console.ReadLine();
              // Brian test
-
+            // Laks Test 22:11 30/05/2012
             // Exercises:
             // 1. Add back in our constructor which takes name and age
             // 2. Create an array of Person called people and then create 
