@@ -9,7 +9,7 @@ namespace StudentDemo.Yo
     {
         // Alternative way to specify setter / getter
         private int idNum;
-        private Array modules;
+        List<string> modules = new List<string>(); // Arrays are not dynamic, Lists are (i.e. can add stuff on to lists)
 
         public int IdNum
         {
@@ -24,7 +24,7 @@ namespace StudentDemo.Yo
         }
         public void addCourse(String course)
         {
-             this.modules.SetValue(course, this.modules.Length);
+             modules.Add(course);
         }
     }
 }

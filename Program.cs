@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using StudentDemo;
+using System.Collections;
 
 namespace StudentDemo.Yo
 {
@@ -14,7 +15,6 @@ namespace StudentDemo.Yo
             p.setAge(30);
 
             Console.WriteLine(p.toString());
-            Console.ReadLine();
              // Brian test
             // Laks Test 22:11 30/05/2012
             // Exercises:
@@ -28,7 +28,9 @@ namespace StudentDemo.Yo
             //    some staff and students to add to that array
             //    Write a for loop to iterate through the array and call the toString method
             Student s = new Student();
-            Person[] people =  { p, s };
+            ArrayList people =  new ArrayList();
+            people.Add(s);
+            people.Add(p);
             foreach (Person x in people)
             {
                  Console.WriteLine(x.toString());
@@ -37,10 +39,8 @@ namespace StudentDemo.Yo
             // 4. Add a list of modules to a student  (dynamic array)
             // 5. Create a method that lets a course be added to a student
             s.addCourse("Enterprise Frameworks");
-
-
             // 6. For bonus points create a method that can remove a module from a student
-
+            Console.ReadLine(); // pause the output window
         }
 
         
