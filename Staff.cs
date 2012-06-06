@@ -5,7 +5,7 @@ using System.Text;
 
 namespace StudentDemo.Yo
 {
-    class Staff
+    class Staff : Person
     {
         int officeNum;
 

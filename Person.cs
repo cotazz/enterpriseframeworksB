@@ -10,6 +10,19 @@ namespace StudentDemo.Yo
         private int age;
         private string name;
 
+        public Person(string name, int age)
+        {
+             setAge(age);
+             setName(name);
+        }
+         public Person () {}
+
+        public Person(int age)
+             : this("", age) { }
+
+        public Person(string name)
+             : this(name, 0) { }
+
         public int getAge()
         {
             return this.age;
