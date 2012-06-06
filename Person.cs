@@ -10,18 +10,18 @@ namespace StudentDemo.Yo
         private int age;
         private string name;
 
-        public Person(string name, int age)
+         // Important: Define one object that will be the Singleton:
+        private static Person me = null;
+
+         // Make the Person constructor private so it can be controlled only by this class:
+        private Person(string name, int age)
         {
              setAge(age);
              setName(name);
         }
-         public Person () {}
+         private Person () {}
 
-        public Person(int age)
-             : this("", age) { }
-
-        public Person(string name)
-             : this(name, 0) { }
+ 
 
         public int getAge()
         {
@@ -46,6 +46,16 @@ namespace StudentDemo.Yo
             return "The age of " + name + " is " + age;
         }
 
-
+         // Create an interface to create the object using the private constructor:
+         public static Person createMe(int age, string name)
+         { // If exists return it:
+              if (me != null)
+                   return me;
+              else // Otherwise create it
+              {
+                   me = new Person(name, age);
+                   return me;
+               }
+          }
     }
 }
