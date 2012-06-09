@@ -24,7 +24,7 @@ PGDip in Cloud Computing
 Brian Burns x10205284
 Sean O Shea x10206230
 Lakshman Pusarapu x11106808
-Torsby Attipoe x1112222
+Torsby Attipoe x11106409
 					 
 
 
