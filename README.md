@@ -72,7 +72,7 @@ The customer will be able to book the car hire online and pay for it by credit c
 The Car Fleet companies will have their own section of the web site where they can log on and amend the details of cars available and check which cars have been hired out. 
 The data will be held in a database. It is proposed that there will be a number of tables in the database including supplier, car, availability, booking, user location and payment. The following diagram represents the proposed tables `
  
-
+![Alt text](https://s3.amazonaws.com/cloud12414214/img.jpg)
 
  A list of the project deliverables that will be submitted on project completion
 ================================================================================
