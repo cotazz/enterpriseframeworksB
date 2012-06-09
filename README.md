@@ -53,13 +53,13 @@ It is proposed to develop the application using C# and Asp.net on the Microsoft 
 
 The goals of the project.
 ========================
-•	To develop electronic services (e-services) including interactive services, electronic transactions, web based applications etc. that can facilitate efficient and cost-effective on-line transaction processing dissemination / delivery of on-line information to customers and car fleet owners.
-•	To develop electronic services (e-services) including interactive services, electronic transactions, web based applications etc. that can facilitate efficient and cost-effective on-line transaction processing dissemination / delivery of on-line information to customers and suppliers.
-•	To develop electronic services (e-services) including interactive services, electronic transactions, web based applications etc. that can facilitate efficient and cost-effective on-line transaction processing dissemination / delivery of on-line information to staff, students and to public.
-•	To continuously enhance the approaches used in applications development and the capabilities of analysts and project leaders in facilitating process changes.
-•	To establish reliable and secure construct in administrative computing environment to ensure smooth operations in mission critical applications.
-•	.That within 2 months that we will have a fully functioning web site where customers can log on search, book and pay for car hire.
-•	That car hire companies can log on and 
+*	To develop electronic services (e-services) including interactive services, electronic transactions, web based applications etc. that can facilitate efficient and cost-effective on-line transaction processing dissemination / delivery of on-line information to customers and car fleet owners.
+*	To develop electronic services (e-services) including interactive services, electronic transactions, web based applications etc. that can facilitate efficient and cost-effective on-line transaction processing dissemination / delivery of on-line information to customers and suppliers.
+*	To develop electronic services (e-services) including interactive services, electronic transactions, web based applications etc. that can facilitate efficient and cost-effective on-line transaction processing dissemination / delivery of on-line information to staff, students and to public.
+*	To continuously enhance the approaches used in applications development and the capabilities of analysts and project leaders in facilitating process changes.
+*	To establish reliable and secure construct in administrative computing environment to ensure smooth operations in mission critical applications.
+*	.That within 2 months that we will have a fully functioning web site where customers can log on search, book and pay for car hire.
+*	That car hire companies can log on and 
 
 The strategy that will be employed to meet the stated project goals.
 ==================================================================== 
@@ -79,26 +79,26 @@ The data will be held in a database. It is proposed that there will be a number 
 A fully functioning web application that works seamlessly
 A technical report describing the application and how it works.
 This report should include the following:
-•	Project Plan
-•	Background research and investigations.
-•	Software development methodology employed 
-•	Requirements analysis 
-•	Use cases 
-•	Architecture/Design approach 
-•	Models (Class Models / Data Models etc.) 
-•	Implementation of particular OOP constructs 
-•	Design patterns and architectural patterns implemented in the application 
-•	How cross-cutting concerns have been handled 
-•	Security of the application 
-•	Configuration of the application 
-•	Scalability of the application 
-•	Testing Approach (in terms of both functional and non-functional requirements) 
+*	Project Plan
+*	Background research and investigations.
+*	Software development methodology employed 
+*	Requirements analysis 
+*	Use cases 
+*	Architecture/Design approach 
+*	Models (Class Models / Data Models etc.) 
+*	Implementation of particular OOP constructs 
+*	Design patterns and architectural patterns implemented in the application 
+*	How cross-cutting concerns have been handled 
+*	Security of the application 
+*	Configuration of the application 
+*	Scalability of the application 
+*	Testing Approach (in terms of both functional and non-functional requirements) 
 
 A  project log document signed by all members of the group which records
-•	all actions and tasks carried out 
-•	who carried out these actions and tasks 
-•	when actions and tasks were carried out 
-•	the time spent on the actions and tasks 
+*	all actions and tasks carried out 
+*	who carried out these actions and tasks 
+*	when actions and tasks were carried out 
+*	the time spent on the actions and tasks 
 
 Demonstrate that the project has the traits and qualities of an enterprise application. 
 
