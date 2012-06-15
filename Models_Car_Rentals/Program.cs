@@ -48,6 +48,17 @@ namespace Models_Car_Rentals
                               break;
                          }
 
+                         if (x.end_date > startdate && x.end_date < enddate)
+                         { // If the unavailability enddate within requested period
+                              available = false;
+                              break;
+                         }
+                         if (x.start_date > startdate && x.end_date < enddate)
+                         { // If the unavailability startdate witin requested period
+                              available = false;
+                              break;
+                         }
+
                     }
                     if (available)
                          available_cars[car_count++] = c; // add c into cars array, then add 1 to car_count
