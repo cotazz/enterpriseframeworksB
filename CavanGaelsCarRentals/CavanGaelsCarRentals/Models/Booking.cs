@@ -6,21 +6,21 @@ using System.Data.Linq.Mapping;
 using System.Data.Linq;
 
 
-namespace Models_Car_Rentals
+namespace CavanGaelsCarRentals.Models
 {
      // Rightclick-Add Referemce to System.Xml.Linq
      // Add using System.Data.Linq.Mapping; and System.Data.Linq
 
      [Table(Name="Bookings")]
-     class Booking
+     public class Booking
      {
-          [Column(IsPrimaryKey = true)]
-          public string booking_id;
+          [Column(IsPrimaryKey=true)]
+          public int Id {get; set;}
           [Column]
-          public string email;
+          public string email {get; set;}
           [Column]
-          public int booking_count;
-          public DateTime date;
+          public int booking_count {get; set;}
+          public DateTime date {get; set;}
           private EntityRef<Customer> _Customer;
           [Association(Name = "FK_Bookings_Customers", Storage = "_Customer", ThisKey = "CustomerID", IsForeignKey = true)]
           public Customer Customer

@@ -1,0 +1,11 @@
+﻿@model IEnumerable<CavanGaelsCarRentals.Models.ui.BookingUI>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@foreach (var car in Model)
+{
+    <p>@car.car_reg</p><br />
+}

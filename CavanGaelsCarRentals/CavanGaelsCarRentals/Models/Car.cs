@@ -6,26 +6,26 @@ using System.Data.Linq.Mapping;
 using System.Data.Linq;
 
 
-namespace Models_Car_Rentals
+namespace CavanGaelsCarRentals.Models
 {
      // Rightclick-Add Referemce to System.Xml.Linq
      // Add using System.Data.Linq.Mapping;
 
      [Table(Name="Cars")]
-     class Car
+     public class Car
      {
           [Column(IsPrimaryKey = true)]
-          public string car_id;
+          public int Id { get; set; }
           [Column]
-          public string car_reg;
+          public string car_reg { get; set; }
           [Column]
-          public string location;
+          public string location { get; set; }
           [Column]
-          public decimal cost_per_day;
+          public decimal cost_per_day { get; set; }
           [Column]
-          float gpsmap_x;
+          float gpsmap_x { get; set; }
           [Column]
-          float gpsmap_y;
+          float gpsmap_y { get; set; }
           private EntityRef<Supplier> _Supplier;
           [Association(Name = "FK_Cars_Suppliers", Storage = "_Supplier", ThisKey = "SupplierID", IsForeignKey = true)]
           public Supplier Supplier

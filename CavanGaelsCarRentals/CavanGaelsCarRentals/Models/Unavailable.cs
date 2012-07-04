@@ -6,21 +6,21 @@ using System.Data.Linq.Mapping;
 using System.Data.Linq;
 
 
-namespace Models_Car_Rentals
+namespace CavanGaelsCarRentals.Models
 {
      // Rightclick-Add Referemce to System.Xml.Linq
      // Add using System.Data.Linq.Mapping;
 
      [Table(Name = "Unavailabilities")]
-     class Unavailable
+     public class Unavailable
      {
           [Column(IsPrimaryKey = true)]
-          public string Unavailability_id;
+          public int Id { get; set; }
           [Column]
-          public string reason_text;
+          public string reason_text { get; set; }
           [Column]
-          public DateTime start_date;
-          public DateTime end_date;
+          public DateTime start_date { get; set; }
+          public DateTime end_date { get; set; }
           private EntityRef<Car> _Car;
           [Association(Name = "FK_Unavailabilities_Cars", Storage = "_Car", ThisKey = "CarID", IsForeignKey = true)]
           public Car Car

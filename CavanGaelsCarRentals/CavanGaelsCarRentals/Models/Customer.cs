@@ -6,17 +6,17 @@ using System.Data.Linq.Mapping;
 using System.Data.Linq;
 
 
-namespace Models_Car_Rentals
+namespace CavanGaelsCarRentals.Models
 {
      [Table(Name="Customers")]
-     class Customer
+     public class Customer
      {
           [Column(IsPrimaryKey = true)]
-          public string customer_id;
+          public int Id { get; set; }
           [Column]
-          public string email;
+          public string email { get; set; }
           [Column]
-          public int booking_count;
+          public int booking_count { get; set; }
           private EntitySet<Booking> _Bookings;
           [Association(Storage = "_Cars", OtherKey = "CustomerID")]
           public EntitySet<Booking> Cars

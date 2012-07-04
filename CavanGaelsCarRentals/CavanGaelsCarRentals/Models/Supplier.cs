@@ -6,24 +6,24 @@ using System.Data.Linq.Mapping;
 using System.Data.Linq;
 
 
-namespace Models_Car_Rentals
+namespace CavanGaelsCarRentals.Models
 {
      // Rightclick-"Add Referemce" for System.Xml.Linq
      // Add using System.Data.Linq.Mapping; and System.Data.Linq
 
      [Table(Name="Suppliers")]
-     class Supplier
+     public class Supplier
      {
           [Column(IsPrimaryKey = true)]
-          public string supplier_id;
+          public int Id { get; set; }
           [Column]
-          public string email;
+          public string email { get; set; }
           [Column]
-          public string location;
+          public string location { get; set; }
           [Column]
-          float gpsmap_x;
+          float gpsmap_x { get; set; }
           [Column]
-          float gpsmap_y;
+          float gpsmap_y { get; set; }
           private EntitySet<Car> _Cars;
           [Association(Storage = "_Cars", OtherKey = "CustomerID")]
           public EntitySet<Car> Cars
