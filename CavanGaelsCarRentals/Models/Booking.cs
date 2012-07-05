@@ -14,7 +14,7 @@ namespace CavanGaelsCarRentals.Models
      [Table(Name="Bookings")]
      public class Booking
      {
-          [Column(IsPrimaryKey=true)]
+          [Column(IsPrimaryKey=true, IsDbGenerated=true)]
           public int Id {get; set;}
           [Column]
           public string email {get; set;}

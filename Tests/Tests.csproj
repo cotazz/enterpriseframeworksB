@@ -48,6 +48,12 @@
     <Compile Include="CSVParserTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CavanGaelsCarRentals\CavanGaelsCarRentals.csproj">
+      <Project>{BE650D38-1E78-4C10-9E8A-B8AA90D2560D}</Project>
+      <Name>CavanGaelsCarRentals</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

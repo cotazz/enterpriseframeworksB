@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="LumenWorks.Framework.IO">
-      <HintPath>..\..\..\..\..\..\..\Desktop\CsvReader_bin\LumenWorks.Framework.IO.dll</HintPath>
+      <HintPath>App_Data\LumenWorks.Framework.IO.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -136,6 +136,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Ingestion\CSVParser.cs" />
+    <Compile Include="Ingestion\IDataparser.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\Car.cs" />
@@ -234,7 +236,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Ingestion\" />
     <Folder Include="Logic\" />
   </ItemGroup>
   <ItemGroup>

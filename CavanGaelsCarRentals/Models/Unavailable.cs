@@ -14,7 +14,7 @@ namespace CavanGaelsCarRentals.Models
      [Table(Name = "Unavailabilities")]
      public class Unavailable
      {
-          [Column(IsPrimaryKey = true)]
+          [Column(IsPrimaryKey = true, IsDbGenerated = true)]
           public int Id { get; set; }
           [Column]
           public string reason_text { get; set; }

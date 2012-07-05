@@ -14,7 +14,7 @@ namespace CavanGaelsCarRentals.Models
      [Table(Name="Cars")]
      public class Car
      {
-          [Column(IsPrimaryKey = true)]
+          [Column(IsPrimaryKey = true, IsDbGenerated = true)]
           public int Id { get; set; }
           [Column]
           public string car_reg { get; set; }
