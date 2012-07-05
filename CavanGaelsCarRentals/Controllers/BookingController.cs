@@ -16,13 +16,7 @@ namespace CavanGaelsCarRentals.Controllers
 
         public ActionResult Index()
         {
-             if (db.Database.Exists())
-             {
-             }
-             else
-             {
-                  db.Database.Create();
-             }
+            
             return View(db.BookingUIs.ToList());
              
         }

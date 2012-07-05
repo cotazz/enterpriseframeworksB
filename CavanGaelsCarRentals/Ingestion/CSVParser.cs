@@ -13,7 +13,7 @@ namespace CavanGaelsCarRentals.Ingestion
           private String supportedFormat = "csv";
           private StreamReader reader;
 
-          List<Car> parseCars()
+          List<Car> IDataparser.parseCars()
           {
                List<Car> ret = new List<Car>();
                CsvReader csv = new CsvReader(reader, true);

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.Linq.Mapping;
 using System.Data.Linq;
+using System.Web.Mvc;
 
 
 namespace CavanGaelsCarRentals.Models
@@ -14,6 +15,17 @@ namespace CavanGaelsCarRentals.Models
      [Table(Name="Cars")]
      public class Car
      {
+          public Car() { }
+          public Car(FormCollection f)
+          {
+               this.car_reg = f[0];
+               this.cost_per_day = Convert.ToDecimal(f[1]);
+               this.location = Convert.ToString(f[2]);
+               this.gpsmap_x = 0;
+               this.gpsmap_y = 0;
+
+
+          }
           [Column(IsPrimaryKey = true, IsDbGenerated = true)]
           public int Id { get; set; }
           [Column]

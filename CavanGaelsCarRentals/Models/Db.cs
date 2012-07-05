@@ -12,5 +12,16 @@ namespace CavanGaelsCarRentals.Models
           public DbSet<BookingUI> BookingUIs { get; set; }
 
           public DbSet<Car> Cars { get; set; }
+
+          public Db()
+          {
+               if (!( this.Database.Exists() ))
+               {    // Create a default SQL Express DB
+                    this.Database.Create();
+               }
+          
+          }
+
+          public DbSet<Supplier> Suppliers { get; set; }
      }
 }
