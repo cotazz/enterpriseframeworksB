@@ -42,18 +42,8 @@ namespace CavanGaelsCarRentals.Controllers
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
-            try
-            {
-                // TODO: Add insert logic here
-                 Car c = new Car(collection);
-                 db.Cars.Add(c);
-                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            catch
-            {
+            
                 return View();
-            }
         }
 
         //

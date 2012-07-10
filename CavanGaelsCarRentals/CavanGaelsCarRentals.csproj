@@ -149,7 +149,9 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Db.cs" />
     <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Models\ui\BookingResponse.cs" />
     <Compile Include="Models\ui\BookingUI.cs" />
+    <Compile Include="Models\ui\CarUI.cs" />
     <Compile Include="Models\Unavailable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -253,10 +255,16 @@
     <Content Include="Views\Car\View1.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Car\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Views\Car\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Car\Index.cshtml" />
+    <Content Include="Views\Booking\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Booking\CreateStep2.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

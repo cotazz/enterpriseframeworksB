@@ -1,0 +1,47 @@
+﻿@model CavanGaelsCarRentals.Models.Booking
+
+@{
+    ViewBag.Title = "CreateStep2";
+}
+
+<h2>CreateStep2</h2>
+
+<fieldset>
+    <legend>Booking</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.booking_count)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.booking_count)
+    </div>
+    <div class="display-label">Supplier
+         @Html.DisplayNameFor(model => model.Car.Supplier.Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Car.Supplier.Id)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Customer.email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Customer.email)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.date)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -21,8 +21,11 @@ namespace CavanGaelsCarRentals.Models
           [Column]
           public DateTime start_date { get; set; }
           public DateTime end_date { get; set; }
-          private EntityRef<Car> _Car;
-          [Association(Name = "FK_Unavailabilities_Cars", Storage = "_Car", ThisKey = "CarID", IsForeignKey = true)]
+
+          [Column]
+          public int CarId { get; set; }
+          private EntityRef<Car> _Car = new EntityRef<Car>(); // new prevents null ref exception
+          [Association(Name = "FK_Unavailable_Car", Storage = "_Car", OtherKey="Id", ThisKey = "CarId", IsForeignKey = true)]
           public Car Car
           {
                get
@@ -31,28 +34,7 @@ namespace CavanGaelsCarRentals.Models
                }
                set
                {
-                    Car previousValue = this._Car.Entity;
-                    if (((previousValue != value)
-                                   || (this._Car.HasLoadedOrAssignedValue == false)))
-                    {
-                         // this.SendPropertyChanging();
-                         //if ((previousValue != null))
-                         //{
-                         //     this._Customer.Entity = null;
-                         //     previousValue.Bookings.Remove(this);
-                         //}
-                         this._Car.Entity = value;
-                         //if ((value != null))
-                         //{
-                         //     value.Bookings.Add(this);
-                         //     this._CustomerID = value.CustomerID;
-                         //}
-                         //else
-                         //{
-                         //     this._CustomerID = default(string);
-                         //}
-                         // this.SendPropertyChanged("Customer");
-                    }
+                    this._Car.Entity = value;
                }
           }
      }

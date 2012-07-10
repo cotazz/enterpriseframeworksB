@@ -4,13 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Data.Linq.Mapping;
 using System.Data.Linq;
+using System.Web.Caching;
 
 
 namespace CavanGaelsCarRentals.Models
 {
      // Rightclick-Add Referemce to System.Xml.Linq
      // Add using System.Data.Linq.Mapping; and System.Data.Linq
-
+     // Id
+     // email
+     // booking_count    int
+     // date             DateTime
+     // Customer         int       Customer_id
+     // Supplier         int       Supplier_id   (auto set from car)
+     // Car              int       Car_id
      [Table(Name="Bookings")]
      public class Booking
      {
@@ -21,8 +28,10 @@ namespace CavanGaelsCarRentals.Models
           [Column]
           public int booking_count {get; set;}
           public DateTime date {get; set;}
-          private EntityRef<Customer> _Customer;
-          [Association(Name = "FK_Bookings_Customers", Storage = "_Customer", ThisKey = "CustomerID", IsForeignKey = true)]
+          [Column]
+          public int CustomerId {get;set;}
+          private EntityRef<Customer> _Customer = new EntityRef<Customer>();// new prevents null ref exception
+          [Association( Name="FK_Booking_Customer", Storage = "_Customer", ThisKey="CustomerId" , OtherKey="Id" , IsForeignKey=true)]
           public Customer Customer
           {
                get
@@ -31,66 +40,43 @@ namespace CavanGaelsCarRentals.Models
                }
                set
                {
-                    Customer previousValue = this._Customer.Entity;
-                    if (((previousValue != value)
-                                   || (this._Customer.HasLoadedOrAssignedValue == false)))
-                    {
-                         // this.SendPropertyChanging();
-                         //if ((previousValue != null))
-                         //{
-                         //     this._Customer.Entity = null;
-                         //     previousValue.Bookings.Remove(this);
-                         //}
-                         this._Customer.Entity = value;
-                         //if ((value != null))
-                         //{
-                         //     value.Bookings.Add(this);
-                         //     this._CustomerID = value.CustomerID;
-                         //}
-                         //else
-                         //{
-                         //     this._CustomerID = default(string);
-                         //}
-                         // this.SendPropertyChanged("Customer");
-                    }
+                    this._Customer.Entity = value;
                }
           }
-          private EntityRef<Supplier> _Supplier;
-          [Association(Name = "FK_Bookings_Customers", Storage = "_Supplier", ThisKey = "SupplierID", IsForeignKey = true)]
+
+          [Column]
+          public int SupplierId { get; set; }
+
+          private EntityRef<Supplier> _Supplier = new EntityRef<Supplier>();
+          [Association(Name = "FK_Booking_Supplier", Storage = "_Supplier", ThisKey = "SupplierId", OtherKey = "Id")]
           public Supplier Supplier
           {
                get
                {
-                    return this._Supplier.Entity;
+                    return _Supplier.Entity;
                }
                set
                {
-                    Supplier previousValue = this._Supplier.Entity;
-                    if (((previousValue != value)
-                                   || (this._Supplier.HasLoadedOrAssignedValue == false)))
-                    {
-                         this._Supplier.Entity = value;
-                         
-                    }
+                    _Supplier.Entity = value;
                }
           }
-          private EntityRef<Car> _Car;
-          [Association(Name = "FK_Bookings_Customers", Storage = "_Car", ThisKey = "CarID", IsForeignKey = true)]
+
+          [Column]
+          public int CarId { get; set; }
+          private EntityRef<Car> _Car = new EntityRef<Car>(); // new prevents null ref exception
+          [Association(Name="FK_Booking_Car", Storage = "_Car", ThisKey = "CarId", OtherKey = "Id", IsForeignKey = true)]
           public Car Car
           {
                get
                {
-                    return this._Car.Entity;
+                    return _Car.Entity;
                }
                set
                {
-                    Car previousValue = this._Car.Entity;
-                    if (((previousValue != value)
-                                   || (this._Car.HasLoadedOrAssignedValue == false)))
-                    {
-                         this._Car.Entity = value;
-
-                    }
+                   
+                    _Car.Entity = value;
+                         
+                    
                }
           }
      }

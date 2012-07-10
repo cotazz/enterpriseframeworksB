@@ -16,16 +16,6 @@ namespace CavanGaelsCarRentals.Models
      public class Car
      {
           public Car() { }
-          public Car(FormCollection f)
-          {
-               this.car_reg = f[0];
-               this.cost_per_day = Convert.ToDecimal(f[1]);
-               this.location = Convert.ToString(f[2]);
-               this.gpsmap_x = 0;
-               this.gpsmap_y = 0;
-
-
-          }
           [Column(IsPrimaryKey = true, IsDbGenerated = true)]
           public int Id { get; set; }
           [Column]
@@ -38,34 +28,32 @@ namespace CavanGaelsCarRentals.Models
           float gpsmap_x { get; set; }
           [Column]
           float gpsmap_y { get; set; }
-          private EntityRef<Supplier> _Supplier;
-          [Association(Name = "FK_Cars_Suppliers", Storage = "_Supplier", ThisKey = "SupplierID", IsForeignKey = true)]
+          [Column]
+          public int SupplierId { get; set; }
+          private EntityRef<Supplier> _Supplier = new EntityRef<Supplier>();// new prevents null ref exception
+          
+          [Association(Name="FK_Car_Supplier", Storage = "_Supplier", ThisKey="SupplierId", OtherKey="Id", IsForeignKey=true)]
           public Supplier Supplier
           {
                get
                {
-                    return this._Supplier.Entity;
+                    return _Supplier.Entity;
                }
                set
                {
-                    Supplier previousValue = this._Supplier.Entity;
-                    if (((previousValue != value)
-                                   || (this._Supplier.HasLoadedOrAssignedValue == false)))
-                    {
-                         this._Supplier.Entity = value;
-
-                    }
+                    _Supplier.Entity = value;
                }
           }
-          private EntitySet<Booking> _Bookings;
-          [Association(Storage = "_Bookings", OtherKey = "CustomerID")]
+          private EntitySet<Booking> _Bookings = new EntitySet<Booking>();// new prevents null ref exception
+          [Association(Name="Car_Bookings", Storage = "_Bookings", ThisKey="Id", OtherKey="CarId")]
           public EntitySet<Booking> Bookings
           {
                get { return this._Bookings; }
                set { this._Bookings.Assign(value); }
           }
-          private EntitySet<Unavailable> _Unavailable;
-          [Association(Storage = "_Unavailabile", OtherKey = "Unavailability_id")]
+
+          private EntitySet<Unavailable> _Unavailable = new EntitySet<Unavailable>();// new prevents null ref exception
+          [Association(Name="Car_Unavailabilities", Storage = "_Unavailable", ThisKey="Id", OtherKey = "CarId")]
           public EntitySet<Unavailable> Unavailablile
           {
                get { return this._Unavailable; }

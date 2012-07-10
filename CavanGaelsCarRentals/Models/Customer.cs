@@ -17,12 +17,13 @@ namespace CavanGaelsCarRentals.Models
           public string email { get; set; }
           [Column]
           public int booking_count { get; set; }
-          private EntitySet<Booking> _Bookings;
-          [Association(Storage = "_Cars", OtherKey = "CustomerID")]
-          public EntitySet<Booking> Cars
+
+          private EntitySet<Booking> _Bookings = new EntitySet<Booking>(); // new prevents null ref exception
+          [Association(Name="Customer_Bookings",Storage = "_Bookings", ThisKey="Id", OtherKey = "CustomerId")]
+          public EntitySet<Booking> Bookings
           {
                get { return this._Bookings; }
-               set { this._Bookings.Assign(value); }
+               set { this._Bookings.Assign( value); }
           }
      }
 }

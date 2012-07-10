@@ -1,11 +1,12 @@
-﻿@model IEnumerable<CavanGaelsCarRentals.Models.ui.BookingUI>
+﻿@model IEnumerable<CavanGaelsCarRentals.Models.Booking>
 
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
-@foreach (var car in Model)
+@foreach (var booking in Model)
 {
-    <p>@car.car_reg</p><br />
+    <p>@booking.Id</p><br />
+    <p>@booking.Car</p><br />
 }

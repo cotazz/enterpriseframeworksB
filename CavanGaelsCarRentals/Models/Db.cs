@@ -9,9 +9,12 @@ namespace CavanGaelsCarRentals.Models
 {
      public class Db : DbContext
      {
-          public DbSet<BookingUI> BookingUIs { get; set; }
+          // public DbSet<BookingUI> BookingUIs { get; set; }
 
           public DbSet<Car> Cars { get; set; }
+          public DbSet<Customer> Customers { get; set; }
+          public DbSet<Unavailable> Unavailabilities{ get; set; }
+          public DbSet<Booking> Bookings { get; set; }
 
           public Db()
           {

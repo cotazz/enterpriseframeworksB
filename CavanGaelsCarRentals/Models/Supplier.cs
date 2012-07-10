@@ -24,15 +24,19 @@ namespace CavanGaelsCarRentals.Models
           float gpsmap_x { get; set; }
           [Column]
           float gpsmap_y { get; set; }
-          private EntitySet<Car> _Cars;
-          [Association(Storage = "_Cars", OtherKey = "CustomerID")]
+
+
+          private EntitySet<Car> _Cars = new EntitySet<Car>(); // new prevents null ref exception
+          [Association(Name="Supplier_Cars", Storage = "_Cars", ThisKey="Id", OtherKey = "SupplierId")]
           public EntitySet<Car> Cars
           {
                get { return this._Cars; }
                set { this._Cars.Assign(value); }
           }
-          private EntitySet<Booking> _Bookings;
-          [Association(Storage = "_Bookings", OtherKey = "CustomerID")]
+
+
+          private EntitySet<Booking> _Bookings = new EntitySet<Booking>(); // new prevents null ref exception
+          [Association(Name="Supplier_Bookings", Storage = "_Bookings", ThisKey = "Id", OtherKey = "SupplierId")]
           public EntitySet<Booking> Bookings
           {
                get { return this._Bookings; }
