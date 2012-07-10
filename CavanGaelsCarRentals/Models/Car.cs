@@ -31,8 +31,8 @@ namespace CavanGaelsCarRentals.Models
           [Column]
           public int SupplierId { get; set; }
           private EntityRef<Supplier> _Supplier = new EntityRef<Supplier>();// new prevents null ref exception
-          
-          [Association(Name="FK_Car_Supplier", Storage = "_Supplier", ThisKey="SupplierId", OtherKey="Id", IsForeignKey=true)]
+
+          [Association(Name = "FK_Car_Supplier", Storage = "_Supplier", ThisKey = "SupplierId", OtherKey = "Id", IsForeignKey = true)]
           public Supplier Supplier
           {
                get

@@ -1,47 +1,59 @@
-﻿@model CavanGaelsCarRentals.Models.Booking
+﻿@model CavanGaelsCarRentals.Models.ui.BookingConfirmUI
 
 @{
     ViewBag.Title = "CreateStep2";
 }
 
 <h2>CreateStep2</h2>
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
 
-<fieldset>
-    <legend>Booking</legend>
+    <fieldset>
+        <legend>BookingUI</legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.email)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.email)
-    </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BookingId)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(m => m.BookingId)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CarReg)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(m => m.CarReg)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CustomerEmail)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(m => m.CustomerEmail)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SupplierEmail)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(m => m.SupplierEmail)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CostPerDay)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CostPerDay)
+        </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.booking_count)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.booking_count)
-    </div>
-    <div class="display-label">Supplier
-         @Html.DisplayNameFor(model => model.Car.Supplier.Id)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Car.Supplier.Id)
-    </div>
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Customer.email)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Customer.email)
-    </div>
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.date)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.date)
-    </div>
-</fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
     @Html.ActionLink("Back to List", "Index")
-</p>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

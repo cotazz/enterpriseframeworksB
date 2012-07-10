@@ -44,22 +44,22 @@ namespace CavanGaelsCarRentals.Models
                }
           }
 
-          [Column]
-          public int SupplierId { get; set; }
+          //[Column]
+          //public int SupplierId { get; set; }
 
-          private EntityRef<Supplier> _Supplier = new EntityRef<Supplier>();
-          [Association(Name = "FK_Booking_Supplier", Storage = "_Supplier", ThisKey = "SupplierId", OtherKey = "Id")]
-          public Supplier Supplier
-          {
-               get
-               {
-                    return _Supplier.Entity;
-               }
-               set
-               {
-                    _Supplier.Entity = value;
-               }
-          }
+          //private EntityRef<Supplier> _Supplier = new EntityRef<Supplier>();
+          //[Association(Name = "FK_Booking_Supplier", Storage = "_Supplier", ThisKey = "SupplierId", OtherKey = "Id", IsForeignKey = true)]
+          //public Supplier Supplier
+          //{
+          //     get
+          //     {
+          //          return _Supplier.Entity;
+          //     }
+          //     set
+          //     {
+          //          _Supplier.Entity = value;
+          //     }
+          //}
 
           [Column]
           public int CarId { get; set; }

@@ -35,12 +35,12 @@ namespace CavanGaelsCarRentals.Models
           }
 
 
-          private EntitySet<Booking> _Bookings = new EntitySet<Booking>(); // new prevents null ref exception
-          [Association(Name="Supplier_Bookings", Storage = "_Bookings", ThisKey = "Id", OtherKey = "SupplierId")]
-          public EntitySet<Booking> Bookings
-          {
-               get { return this._Bookings; }
-               set { this._Bookings.Assign(value); }
-          }
+          //private EntitySet<Booking> _Bookings = new EntitySet<Booking>(); // new prevents null ref exception
+          //[Association(Name="Supplier_Bookings", Storage = "_Bookings", ThisKey = "Id", OtherKey = "SupplierId")]
+          //public EntitySet<Booking> Bookings
+          //{
+          //     get { return this._Bookings; }
+          //     set { this._Bookings.Assign(value); }
+          //}
      }
 }

@@ -143,12 +143,18 @@
     </Compile>
     <Compile Include="Ingestion\CSVParser.cs" />
     <Compile Include="Ingestion\IDataparser.cs" />
+    <Compile Include="Migrations\201207102014192_InitialCreate.cs" />
+    <Compile Include="Migrations\201207102014192_InitialCreate.Designer.cs">
+      <DependentUpon>201207102014192_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Db.cs" />
     <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Models\ui\BookingConfirmUI.cs" />
     <Compile Include="Models\ui\BookingResponse.cs" />
     <Compile Include="Models\ui\BookingUI.cs" />
     <Compile Include="Models\ui\CarUI.cs" />
@@ -200,7 +206,9 @@
     <Content Include="Scripts\knockout-2.0.0.debug.js" />
     <Content Include="Scripts\knockout-2.0.0.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
