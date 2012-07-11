@@ -58,7 +58,7 @@ The goals of the project.
 *	To develop electronic services (e-services) including interactive services, electronic transactions, web based applications etc. that can facilitate efficient and cost-effective on-line transaction processing dissemination / delivery of on-line information to staff, students and to public.
 *	To continuously enhance the approaches used in applications development and the capabilities of analysts and project leaders in facilitating process changes.
 *	To establish reliable and secure construct in administrative computing environment to ensure smooth operations in mission critical applications.
-*	.That within 2 months that we will have a fully functioning web site where customers can log on search, book and pay for car hire.
+*	That within 2 months that we will have a fully functioning web site where customers can log on search, book and pay for car hire.
 *	That car hire companies can log on and 
 
 The strategy that will be employed to meet the stated project goals.
@@ -105,3 +105,15 @@ Demonstrate that the project has the traits and qualities of an enterprise appli
 Provide a presentation of the project and demonstrate the developed application.
 
 
+Main Report
+===========
+
+1. Data Access Layer
+====================
+
+Microsoft SQL Server did not like foreign key relationships that may cause cycles or multiple cascade paths. [*Stackoverflow*](http://stackoverflow.com/questions/851625/foreign-key-constraint-may-cause-cycles-or-multiple-cascade-paths)
+[*MSDN*](http://msdn.microsoft.com/en-us/library/ms186973%28v=sql.105%29.aspx)
+As an example we had tables Bookings, Cars both linking to Supplier by FK SupplierId.
+Ideally both models should contain a reference to the supplier without a problem but SQL Server played it ultra conservative and complained about multiple cascade paths.
+Cascades are rules to carry out if a user deltes a key to which foreign keys point (e.g. ON DELETE of an entity). The issue happens if there is a triangular relationship between Booking to Supplier to Car and back to Booking. What we found was the relationship must not cycle like this.
+The solution is to create clear cascade rules for ONDELETE or to remove the offending foreign relationship. For the moment, the simple solution was to remove the link between supplier and booking (not ideal).
