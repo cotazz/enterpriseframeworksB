@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using CavanGaelsCarRentals.Models;
 using CavanGaelsCarRentals.Models.ui;
 using System.Web.Caching;
+using CavanGaelsCarRentals.Logic;
 
 namespace CavanGaelsCarRentals.Controllers
 {
@@ -70,37 +71,10 @@ namespace CavanGaelsCarRentals.Controllers
          // GET: /Booking/CreateStep2
         public ActionResult CreateStep2(Booking Booking)
         {
-             BookingConfirmUI result_attempt1 = new BookingConfirmUI();
-             DateTime start = DateTime.Now;
-             var result_attempt2 = (from bookng in db.Bookings
-                                   where bookng.Id.Equals(Booking.Id)
-                                   select new BookingConfirmUI
-                                   {
-                                        BookingId = bookng.Id,
-                                        CarReg = bookng.Car.car_reg,
-                                        CostPerDay = bookng.Car.cost_per_day,
-                                        CustomerEmail = bookng.Customer.email,
-                                        SupplierEmail = bookng.Car.Supplier.email
-                                   }).FirstOrDefault();
-             DateTime intermediate = DateTime.Now;
-             var query = from booking in db.Bookings.Include("Car").Include("Customer")
-                         where booking.Id.Equals(Booking.Id)
-                         select booking;
-             Booking b = query.FirstOrDefault();
-             DateTime finished = DateTime.Now;
-             result_attempt1.CarReg = b.Car.car_reg;
-             var query1 = from supplier in db.Suppliers
-                        where supplier.Id.Equals(b.Car.SupplierId)
-                        select supplier;
-             Supplier s = query1.FirstOrDefault();
-             result_attempt1.SupplierEmail = s.email;
-             var query1_profile = intermediate - start;
-             var query2_profile = finished - intermediate;
-             String profiling_info = "Query 1 : " + Convert.ToString(query1_profile)
-                                    + "\nQuery 2: " + Convert.ToString(query2_profile);
-             result_attempt1.CustomerEmail = profiling_info;
-             result_attempt1.CostPerDay = b.Car.cost_per_day;
-               return View(result_attempt1);
+             
+
+             
+               return View(BookingConfirm.ShowConfirmUI(Booking));
           
         }
 
