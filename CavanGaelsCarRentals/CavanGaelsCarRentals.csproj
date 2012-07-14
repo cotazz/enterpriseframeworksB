@@ -143,6 +143,7 @@
     </Compile>
     <Compile Include="Ingestion\CSVParser.cs" />
     <Compile Include="Ingestion\IDataparser.cs" />
+    <Compile Include="Logic\AvailableLocations.cs" />
     <Compile Include="Logic\BookingConfirm.cs" />
     <Compile Include="Migrations\201207102014192_InitialCreate.cs" />
     <Compile Include="Migrations\201207102014192_InitialCreate.Designer.cs">
@@ -159,6 +160,7 @@
     <Compile Include="Models\ui\BookingResponse.cs" />
     <Compile Include="Models\ui\BookingUI.cs" />
     <Compile Include="Models\ui\CarUI.cs" />
+    <Compile Include="Models\ui\LocationsUI.cs" />
     <Compile Include="Models\Unavailable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

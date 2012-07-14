@@ -1,5 +1,7 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿
+@model CavanGaelsCarRentals.Models.ui.LocationsUI
+@{
+    ViewBag.Title = "Home Pag.e";
 }
 @section featured {
     <section class="featured">
@@ -19,16 +21,24 @@
 
 <div id="rates">
 <h2>text</h2>
-		<form method="post" action="#" name="search" class="search">
-			<label>County&nbsp;</label>
-            <select name="country">
-			  <option>Dublin</option>
-			  <option>Cavan</option>
-			  <option>Westmeath</option>
-			  <option>Longford</option>
-			  <option>Meath</option>
-			  <option>Louth</option>
-			</select>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <!--
+		<form method="post" action="#" name="search" class="search">-->
+    
+    
+    
+			<div class="editor-label">
+            @Html.LabelFor(model => model.locations)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.locations, Model.locations)
+            @Html.ValidationMessageFor(model => model.locations)
+        </div>
+    
+    }
+
 			<br /><br class="spacer"/>
 			<label>Pick-Up &nbsp;</label>
             <select name="m1">

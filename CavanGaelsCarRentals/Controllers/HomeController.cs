@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CavanGaelsCarRentals.Models.ui;
+using CavanGaelsCarRentals.Logic;
 
 namespace CavanGaelsCarRentals.Controllers
 {
@@ -10,9 +12,10 @@ namespace CavanGaelsCarRentals.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to kick-start your ASP.NET MVC application.";
-
-            return View();
+            LocationsUI locations = new LocationsUI();
+            locations = AvailableLocations.listLocations();
+            
+            return View(locations);
         }
 
         public ActionResult About()
