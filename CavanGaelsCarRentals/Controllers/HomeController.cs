@@ -18,6 +18,12 @@ namespace CavanGaelsCarRentals.Controllers
             return View(locations);
         }
 
+        public ActionResult CarsAvailable(string location)
+        {
+
+            return PartialView("CarsCount" ,AvailableLocations.TotalCarsAvailable(location));
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your app description page.";

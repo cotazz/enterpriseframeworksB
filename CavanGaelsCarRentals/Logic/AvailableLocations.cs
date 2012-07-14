@@ -29,6 +29,35 @@ namespace CavanGaelsCarRentals.Logic
             result.locations = new MultiSelectList(locations);
             return result;
         }
+
+        public static LocationCarsCount TotalCarsAvailable(string location)
+        {
+            Db db = new Db();
+
+            var cars = db.Cars.ToList();
+            var availablecars = new List<Car>();
+            foreach (var car in cars)
+            {
+                if (location.Equals(car.location))
+                {
+                    //if car.available  Brian to create this
+
+                   
+                    availablecars.Add(car);
+                }
+
+            }
+
+            var result = new LocationCarsCount();
+            result.AvailableCount = availablecars.Count();
+            return result;
+
+
+
+
+        }
+
     }
+
 
 }

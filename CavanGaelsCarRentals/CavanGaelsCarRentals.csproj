@@ -160,6 +160,7 @@
     <Compile Include="Models\ui\BookingResponse.cs" />
     <Compile Include="Models\ui\BookingUI.cs" />
     <Compile Include="Models\ui\CarUI.cs" />
+    <Compile Include="Models\ui\LocationCarsCount.cs" />
     <Compile Include="Models\ui\LocationsUI.cs" />
     <Compile Include="Models\Unavailable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -276,6 +277,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Booking\CreateStep2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_CarsCount.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

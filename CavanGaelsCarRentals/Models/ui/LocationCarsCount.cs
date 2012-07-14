@@ -7,5 +7,6 @@ namespace CavanGaelsCarRentals.Models.ui
 {
     public class LocationCarsCount
     {
+        public int AvailableCount { get; set; }
     }
 }
