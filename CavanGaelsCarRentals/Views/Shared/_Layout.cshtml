@@ -5,48 +5,91 @@
         <title>@ViewBag.Title - My ASP.NET MVC Application</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/themes/base/css", "~/Content/css")
+        @Styles.Render("~/Content/themes/base/css", "~/Content/css", "~/Content/styles.css")
         @Scripts.Render("~/bundles/modernizr")
     </head>
     <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("Your logo here", "Index", "Home")</p>
-                </div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("New Booking","Create", "Booking")</li>
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
-        <div id="body">
+
+
+    <div id="mainbody">
+<div id="content">
+
+<div id="overs">
+<div id="mainimg">
+<img src="images/main_img.jpg" alt="" width="426" height="198" /></div>
+
+<div id="grey">
+<div id="ingrey">
+
+<div id="welcome">
+<h2>text</h2>
+<h3>text</h3>
+<p class="intro">Welcome to Cavan Gaels, where your can get the best cars for less</a></p>
+<p><span>Cavan Gaels</span><br />
+  Welcome to Cavan Gaels, where your can get the best cars for less <a href="#"></a></p>
+</div>
+
+<div id="services">
+<h2>text</h2>
+<p class="withimg"><span>Look no further</span><br />Welcome to Cavan Gaels, where your can get the best cars for less<a href="#"></a></p>
+
+<ul class="left">
+<li><a href="#">Read more </a></li>
+<li><a href="#">Read more </a></li>
+</ul>
+
+<ul class="right">
+<li><a href="#">Read more </a></li>
+<li><a href="#">Read more </a></li>
+
+</ul>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+
+
+<div id="header">
+
+<a href="#"><img src="images/logo.jpg" alt="Cavan Gaels" width="221" height="47" border="0" /></a>
+
+<ul>
+<li class="home">@Html.ActionLink("Home", "Index", "Home")</li>
+<li class="rent"> @Html.ActionLink("New Booking","Create", "Booking")</li>
+<li class="reservation"><a href="#" title="Reservation">Reservation</a></li>
+<li class="vehicles"><a href="#" title="Vehicles">Vehicles</a></li>
+<li class="contacts">@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+<li class="login / register"><a href="#" title="Login / Register">Login / Register</a></li>
+</ul>
+</div>
+
+<div id="maincontent">
+<div id="inmaincontent">
+
+
             @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
                 @RenderBody()
-            </section>
-        </div>
+                </div>
+
+</div>
+ 
+</div>
+
         <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
-                </div>
-                <div class="float-right">
-                    <ul id="social">
-                        <li><a href="http://facebook.com" class="facebook">Facebook</a></li>
-                        <li><a href="http://twitter.com" class="twitter">Twitter</a></li>
-                    </ul>
-                </div>
-            </div>
+
+
+        <div id="footer">
+
+<img src="images/call.jpg" alt="" width="233" height="76" />
+
+<p>@Html.ActionLink("Home", "Index", "Home") | <a href="#">ABOUT US</a> | <a href="#">RENT A CAR</a> | <a href="#">VEHICLES</a> | <a href="#">PRICES</a> | <a href="#">SUPPORT INFO</a> | <a href="#">CONTACTS</a><br/>
+Copyright &copy; Cavan Gaels.<a></a></p>
+</div>
+</div>
+</div>
+
         </footer>
 
         @Scripts.Render("~/bundles/jquery")
