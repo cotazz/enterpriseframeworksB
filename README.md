@@ -117,3 +117,29 @@ As an example we had tables Bookings, Cars both linking to Supplier by FK Suppli
 Ideally both models should contain a reference to the supplier without a problem but SQL Server played it ultra conservative and complained about multiple cascade paths.
 Cascades are rules to carry out if a user deltes a key to which foreign keys point (e.g. ON DELETE of an entity). The issue happens if there is a triangular relationship between Booking to Supplier to Car and back to Booking. What we found was the relationship must not cycle like this.
 The solution is to create clear cascade rules for ONDELETE or to remove the offending foreign relationship. For the moment, the simple solution was to remove the link between supplier and booking (not ideal).
+
+## Use Cases
+
+Use Case 1:  User logs on
+*	User asked to input pickup location
+*	The user is presented with a drop down box of a list of locations
+*	The user chooses the location that they require to pick up the car
+*	User fills out the following  details:
+  *	Pick up date & time
+  *	Drop off date & time
+  *	Car Class	
+  *	Email address (optional)
+*	User Enters Submit Button
+*	The user is given a report of the number of cars that are available
+
+
+Use Case 2: A list of cars available is given from the cheapest to the dearest 
+*	The cars are listed from the cheapest to the dearest.
+*	The cars are described by the Make, Model and the Number of passengers it can hold & the luggage space.
+*	The user then selects the car that they want to hire by Select Button
+*	The user is then given a screen with the details of the car, the location, the pickup and drop off times and the total rental cost.
+*	The user is asked to confirm by clicking a Button called Confirm
+*	The user is then re directed to a new page to register their details and confirm the booking
+
+Use Case 3: User Completes a form giving their Details and Requested to enter their Payment Details
+
