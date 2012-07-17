@@ -141,5 +141,35 @@ Use Case 2: A list of cars available is given from the cheapest to the dearest
 *	The user is asked to confirm by clicking a Button called Confirm
 *	The user is then re directed to a new page to register their details and confirm the booking
 
-Use Case 3: User Completes a form giving their Details and Requested to enter their Payment Details
+Use Case 3: User Completes a form giving their Details and are Requested to enter their Payment Details
+*	The customer is requested to fill in a form giving their first name, last name, age, email address
+*	They are then requested to fill in their payment details. Their credit card or debit card.
+*	The user is then required to press a button to confirm the booking
+*	A page is returned confirming the booking
+*	An order confirming the booking is also sent to the car supplier by email
+		
+
+Use Case 4: Car Suppliers Log in & Report
+*	Supplier enters login button
+*	Supplier enters id and password
+*	The supplier is then returned a page with supplier details. Giving their name address and the number of current cars on the database
+*	 This supplier will include an option to list from the cars available from that supplier & the dates & times the cars are hired from
+*	The supplier then selects the required options it wants from the report, either a full list of cars or just a list of the confirmed bookings.
+*	The supplier is then returned a list showing the Registration of the Car, The Car description (name, make, model & colour) & current bookings in the car.
+*	The supplier also has option to amend car listing.
+
+
+Use Case 5: Supplier amends car details by either entering a new csv file of amending an individual car record.
+*	From car suppliers page while logged in the supplier is given the option to amend the car listing by clicking in a button.
+*	The supplier is then presented with a drop down listing with options to either
+	*	Remove a car either temporarily or permanently
+	*	Replace a car with a different car
+	*	Add a new car
+	*	Replace the full list of cars with a new list by updating with a new csv file.
+*	If the supplier decides to remove the car either temporarily or permanently they can change the status of the car to not available or change the status to available
+*	If a new additional car becomes available the supplier can add a record for that by entering the Reg of the car, the name, make model & colour. 
+*	If the supplier chooses to update the car list with a new list he then selects CSV from the Export As drop-down field
+*	The user then selects the Generate Report button
+*	The is re-directed to a new page which displays the generated CSV file
+
 
