@@ -37,5 +37,14 @@ namespace CavanGaelsCarRentals.Models
                     this._Car.Entity = value;
                }
           }
+
+
+          private EntityRef<Booking> _Booking = new EntityRef<Booking>();// new prevents null ref exception
+          [Association(Name = "Unavailable_Booking", Storage = "_Booking", ThisKey = "Id", OtherKey = "Unavailability_Id")]
+          public EntityRef<Booking> Booking
+          {
+               get { return this._Booking; }
+               set { this._Booking = value; }
+          }
      }
 }

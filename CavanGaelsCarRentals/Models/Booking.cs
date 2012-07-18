@@ -27,6 +27,7 @@ namespace CavanGaelsCarRentals.Models
           public string email {get; set;}
           [Column]
           public int booking_count {get; set;}
+
           public DateTime date {get; set;}
           [Column]
           public int CustomerId {get;set;}
@@ -77,6 +78,26 @@ namespace CavanGaelsCarRentals.Models
                     _Car.Entity = value;
                          
                     
+               }
+          }
+
+
+          [Column]
+          public int Unavailability_Id { get; set; }
+          private EntityRef<Unavailable> _Unavailable = new EntityRef<Unavailable>(); // new prevents null ref exception
+          [Association(Name = "FK_Booking_Unavailability", Storage = "_Unavailable", ThisKey = "Unavailability_Id", OtherKey = "Id", IsForeignKey = true)]
+          public Car Car
+          {
+               get
+               {
+                    return _Car.Entity;
+               }
+               set
+               {
+
+                    _Car.Entity = value;
+
+
                }
           }
      }
