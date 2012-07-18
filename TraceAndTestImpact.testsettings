@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<TestSettings name="Trace and Test Impact" id="d0bb6680-4ace-4eda-a169-4a34af25b7be" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+<TestSettings name="Trace and Test Impact" enableDefaultDataCollectors="true" id="d0bb6680-4ace-4eda-a169-4a34af25b7be" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
   <Description>These are test settings for Trace and Test Impact.</Description>
   <Execution>
     <TestTypeSpecific />
