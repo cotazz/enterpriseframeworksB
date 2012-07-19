@@ -138,6 +138,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DataAccess\BookingsDAL.cs" />
+    <Compile Include="DataAccess\Repository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -146,6 +147,7 @@
     <Compile Include="Logic\AvailableLocations.cs" />
     <Compile Include="Logic\BookingConfirm.cs" />
     <Compile Include="Logic\IServiceLayer.cs" />
+    <Compile Include="Logic\ServiveLayer.cs" />
     <Compile Include="Migrations\201207102014192_InitialCreate.cs" />
     <Compile Include="Migrations\201207102014192_InitialCreate.Designer.cs">
       <DependentUpon>201207102014192_InitialCreate.cs</DependentUpon>
@@ -155,7 +157,7 @@
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\Db.cs" />
+    <Compile Include="DataAccess\Db.cs" />
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Models\ui\BookingConfirmUI.cs" />
     <Compile Include="Models\ui\BookingCreateUI.cs" />
