@@ -13,58 +13,63 @@ namespace CavanGaelsCarRentals.Controllers
 {
     public class BookingController : Controller
     {
-         private Db db = new Db();
-         private Cache temp = new Cache();
+        private IServiceLayer logic = new ServiveLayer();
         //
         // GET: /Booking/
 
-        public ActionResult Index()
+        public ActionResult Index(LocationsUI requestedTimePlace)
         {
-            
-            return View(db.Bookings.ToList());
+            BookingUI carList = new BookingUI();
+            carList = logic.ListAvailableCars(requestedTimePlace);
+            return View(carList);
              
         }
 
 
          //
          // GET: /Booking/Create
-        public ActionResult Create()
+        public ActionResult Create(BookingUI selectedCar)
         {
-             List<Car> cars = db.Cars.ToList();
-             BookingUI model = new BookingUI
-             {
+       //      List<Car> cars = db.Cars.ToList();
+         //    BookingUI model = new BookingUI
+         //    {
 
-                    Cars = new MultiSelectList(
-                            cars,
-                            "Id",
-                            "car_reg",
-                            cars.Select(c => c.Id)
-                            )
+         //           Cars = new MultiSelectList(
+         ////                   cars,
+         //                   "Id",
+         //                   "car_reg",
+         //                   cars.Select(c => c.Id)
+         //                   )
 
-             };
-             return View(model);
+         //    };
+         //    return View(model);
+            BookingCreateUI showChosenCar = new BookingCreateUI();
+            showChosenCar = logic.ShowChosenCar(selectedCar);
+            return View(showChosenCar);
         }
 
         //
         // POST: /Booking/Create
 
         [HttpPost]
-        public ActionResult Create(BookingCreateUI collection)
+        public ActionResult Create(BookingCreateUI booking)
         {
-             Booking booking = new Booking();
-             booking.booking_count = 0;
-            // Car car = db.Cars.Find(collection.Cars);
-            // booking.Car = car;
-             booking.date = collection.fromDate;
-             var s = db.Suppliers.FirstOrDefault();
-             var cars = s.Cars;
-             booking.Customer = db.Customers.FirstOrDefault();
-             booking.email = "test@example.com";
-             // temp.Insert("1", booking);
-             db.Bookings.Add(booking);
-             db.SaveChanges();     
-             return RedirectToAction("CreateStep2", booking);
-         
+            // Booking booking = new Booking();
+            // booking.booking_count = 0;
+            //// Car car = db.Cars.Find(collection.Cars);
+            //// booking.Car = car;
+            // booking.date = collection.fromDate;
+            // var s = db.Suppliers.FirstOrDefault();
+            // var cars = s.Cars;
+            // booking.Customer = db.Customers.FirstOrDefault();
+            // booking.email = "test@example.com";
+            // // temp.Insert("1", booking);
+            // db.Bookings.Add(booking);
+            // db.SaveChanges();     
+            // return RedirectToAction("CreateStep2", booking);
+            BookingConfirmUI bookingConfirm = new BookingConfirmUI();
+            bookingConfirm = logic.ShowBookingConfirm(booking);
+            return View(bookingConfirm);
         }
 
          //

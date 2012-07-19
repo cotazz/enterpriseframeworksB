@@ -10,10 +10,11 @@ namespace CavanGaelsCarRentals.Controllers
 {
     public class HomeController : Controller
     {
+        private IServiceLayer logic = new ServiveLayer();
         public ActionResult Index()
         {
             LocationsUI locations = new LocationsUI();
-            locations = AvailableLocations.listLocations();
+            locations = logic.ListAvailableLocations();
             
             return View(locations);
         }
