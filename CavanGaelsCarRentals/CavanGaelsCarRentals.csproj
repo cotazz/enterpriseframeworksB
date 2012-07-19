@@ -145,6 +145,7 @@
     <Compile Include="Ingestion\IDataparser.cs" />
     <Compile Include="Logic\AvailableLocations.cs" />
     <Compile Include="Logic\BookingConfirm.cs" />
+    <Compile Include="Logic\IServiceLayer.cs" />
     <Compile Include="Migrations\201207102014192_InitialCreate.cs" />
     <Compile Include="Migrations\201207102014192_InitialCreate.Designer.cs">
       <DependentUpon>201207102014192_InitialCreate.cs</DependentUpon>
@@ -157,9 +158,8 @@
     <Compile Include="Models\Db.cs" />
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Models\ui\BookingConfirmUI.cs" />
-    <Compile Include="Models\ui\BookingResponse.cs" />
+    <Compile Include="Models\ui\BookingCreateUI.cs" />
     <Compile Include="Models\ui\BookingUI.cs" />
-    <Compile Include="Models\ui\CarUI.cs" />
     <Compile Include="Models\ui\LocationCarsCount.cs" />
     <Compile Include="Models\ui\LocationsUI.cs" />
     <Compile Include="Models\Unavailable.cs" />

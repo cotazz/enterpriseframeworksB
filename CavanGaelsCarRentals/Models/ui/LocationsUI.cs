@@ -9,5 +9,7 @@ namespace CavanGaelsCarRentals.Models.ui
     public class LocationsUI
     {
         public MultiSelectList locations { get; set; }
+        public DateTime fromDate { get; set; }
+        public DateTime toDate { get; set; }
     }
 }

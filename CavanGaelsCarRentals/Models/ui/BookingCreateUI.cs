@@ -6,10 +6,11 @@ using System.Web.UI.WebControls;
 
 namespace CavanGaelsCarRentals.Models.ui
 {
-     public class BookingResponse
+     public class BookingCreateUI
      {
-          public int Cars { get; set; }
-          public int amount { get; set; }
+          public Car car { get; set; }
+          public Decimal amount { get; set; }
+          public string location { get; set; }
           public DateTime fromDate { get; set; }
           public DateTime toDate { get; set; }
      }

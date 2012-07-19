@@ -49,12 +49,12 @@ namespace CavanGaelsCarRentals.Controllers
         // POST: /Booking/Create
 
         [HttpPost]
-        public ActionResult Create(BookingResponse collection)
+        public ActionResult Create(BookingCreateUI collection)
         {
              Booking booking = new Booking();
              booking.booking_count = 0;
-             Car car = db.Cars.Find(collection.Cars);
-             booking.Car = car;
+            // Car car = db.Cars.Find(collection.Cars);
+            // booking.Car = car;
              booking.date = collection.fromDate;
              var s = db.Suppliers.FirstOrDefault();
              var cars = s.Cars;
