@@ -133,9 +133,11 @@ Use Case 1:  User logs on
 *	The user is given a report of the number of cars that are available
 
 
-Use Case 2: A list of cars available is given from the cheapest to the dearest 
+Use Case 2a: A list of cars available is given from the cheapest to the dearest 
 *	The cars are listed from the cheapest to the dearest.
 *	The cars are described by the Make, Model and the Number of passengers it can hold & the luggage space.
+
+Use Case 2b: User selects car they want to hire
 *	The user then selects the car that they want to hire by Select Button
 *	The user is then given a screen with the details of the car, the location, the pickup and drop off times and the total rental cost.
 *	The user is asked to confirm by clicking a Button called Confirm
