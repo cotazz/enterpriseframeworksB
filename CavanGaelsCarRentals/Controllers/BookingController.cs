@@ -79,8 +79,8 @@ namespace CavanGaelsCarRentals.Controllers
              
 
              
-               return View(BookingConfirm.ShowConfirmUI(Booking));
-          
+               //return View(logic.SBookingConfirm.ShowConfirmUI(Booking));
+             return View();
         }
 
     }

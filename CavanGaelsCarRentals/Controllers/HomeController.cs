@@ -22,7 +22,7 @@ namespace CavanGaelsCarRentals.Controllers
         public ActionResult CarsAvailable(string location)
         {
 
-            return PartialView("CarsCount" ,AvailableLocations.TotalCarsAvailable(location));
+            return PartialView("CarsCount" , logic.TotalCarsAvailable(location));
         }
 
         public ActionResult About()

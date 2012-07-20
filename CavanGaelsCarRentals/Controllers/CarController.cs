@@ -10,13 +10,13 @@ namespace CavanGaelsCarRentals.Controllers
 {
     public class CarController : Controller
     {
-         private Db db = new Db();
         //
         // GET: /User/
 
         public ActionResult Index()
         {
-            return View(db.Cars.ToList());
+            //return View(db.Cars.ToList());
+             return View();
         }
 
         //
@@ -24,8 +24,8 @@ namespace CavanGaelsCarRentals.Controllers
 
         public ActionResult Details(int id)
         {
-             Car c = db.Cars.Find(id);
-            return View(c);
+             //Car c = db.Cars.Find(id);
+            return View();
         }
 
         //

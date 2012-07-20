@@ -144,15 +144,8 @@
     </Compile>
     <Compile Include="Ingestion\CSVParser.cs" />
     <Compile Include="Ingestion\IDataparser.cs" />
-    <Compile Include="Logic\AvailableLocations.cs" />
-    <Compile Include="Logic\BookingConfirm.cs" />
     <Compile Include="Logic\IServiceLayer.cs" />
     <Compile Include="Logic\ServiveLayer.cs" />
-    <Compile Include="Migrations\201207102014192_InitialCreate.cs" />
-    <Compile Include="Migrations\201207102014192_InitialCreate.Designer.cs">
-      <DependentUpon>201207102014192_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\Car.cs" />
@@ -282,6 +275,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_CarsCount.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{9E1E05A3-AC52-4C26-8472-6F2E42BFE8C1}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

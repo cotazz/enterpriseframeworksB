@@ -8,15 +8,15 @@ namespace CavanGaelsCarRentals.Logic
 {
     interface IServiceLayer
     {
-        public LocationsUI ListAvailableLocations();
+        LocationsUI ListAvailableLocations();
          
-        public LocationCarsCount TotalCarsAvailable(string location);
+        LocationCarsCount TotalCarsAvailable(string location);
 
-        public BookingUI ListAvailableCars(LocationsUI requestedTimePlace);
+        BookingUI ListAvailableCars(LocationsUI requestedTimePlace);
 
-        public BookingCreateUI ShowChosenCar(BookingUI selectedCar);
+        BookingCreateUI ShowChosenCar(BookingUI selectedCar);
 
-        public BookingConfirmUI ShowBookingConfirm(BookingCreateUI booking);
+        BookingConfirmUI ShowBookingConfirm(BookingCreateUI booking);
 
     }
 }

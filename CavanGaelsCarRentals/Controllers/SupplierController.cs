@@ -9,7 +9,6 @@ namespace CavanGaelsCarRentals.Controllers
 {
     public class SupplierController : Controller
     {
-         private Db db = new Db();
         //
         // GET: /User/
 
