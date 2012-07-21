@@ -20,6 +20,10 @@ string id = name.Replace( ".", "_" );
                 highlightWeek: true,
                 numberOfMonths: 1,
                 showAnim: "scale",
+                onSelect: function() {
+                    $(this).change();
+                  },
+
                 showOptions: {
                     origin: ["top", "left"]
                 }

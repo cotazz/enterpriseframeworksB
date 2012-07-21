@@ -4,51 +4,30 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
 
-@using (Html.BeginForm()) {
-    @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend>BookingUI</legend>
+<div id="listCars" style="background-color: #FEF; font-size: large; padding: 20px; width: 100%">
+<h2> Listing Cars</h2>
+    <table>
+    <tr>
+        <th></th>
+        <th>Car Reg</th>
+        <th>Amount</th>
+    </tr>
+    @foreach (var car in Model.Cars)
+{
+    <tr><td>
+        <img src="" alt="car" />
+    </td><td>
+        @Html.DisplayFor(modelItem => car.car_reg)
+    </td><td>
+        @Html.DisplayFor(modelItem => car.cost_per_day)
+    </td></tr>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Cars)
-        </div>
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.Cars, Model.Cars)
-            @Html.ValidationMessageFor(model => model.Cars)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.amount)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.amount)
-            @Html.ValidationMessageFor(model => model.amount)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.fromDate)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.fromDate)
-            @Html.ValidationMessageFor(model => model.fromDate)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.toDate)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.toDate)
-            @Html.ValidationMessageFor(model => model.toDate)
-        </div>
-
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
+    
 }
+</table>
+</div>
 
 <div>
     @Html.ActionLink("Back to List", "Index")

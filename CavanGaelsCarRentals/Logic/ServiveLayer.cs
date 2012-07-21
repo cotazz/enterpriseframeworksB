@@ -25,9 +25,15 @@ namespace CavanGaelsCarRentals.Logic
              };
         }
 
-        public Models.ui.LocationCarsCount TotalCarsAvailable(string location)
+        public Models.ui.LocationCarsCount TotalCarsAvailable(string location, string fromDate, string toDate)
         {
-            throw new NotImplementedException();
+             DateTime from = DateTime.ParseExact(fromDate, "d/M/yyyy", null);
+             DateTime to = DateTime.ParseExact(fromDate, "d/M/yyyy", null); 
+             var cars = db.listAvailableCars(location, from, to);
+             return new LocationCarsCount
+             {
+                  AvailableCount = cars.Count()
+             };
         }
 
         public Models.ui.BookingUI ListAvailableCars(Models.ui.LocationsUI requestedTimePlace)
@@ -45,12 +51,7 @@ namespace CavanGaelsCarRentals.Logic
 
              BookingUI carResults = new BookingUI();
              carResults.amount = cars.Count();
-             carResults.Cars = new MultiSelectList(
-                  cars,
-                  "Id",
-                  "car_reg",
-                   cars.Select(c => c.Id)
-              );
+             carResults.Cars = cars.ToList();
              carResults.toDate = toDate;
              carResults.fromDate = fromDate;
              carResults.id = 1;

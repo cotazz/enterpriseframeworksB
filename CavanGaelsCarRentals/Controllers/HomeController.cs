@@ -19,10 +19,10 @@ namespace CavanGaelsCarRentals.Controllers
             return View(locations);
         }
 
-        public ActionResult CarsAvailable(string location)
+        public ActionResult CarsAvailable(string fromDate, string location, string toDate)
         {
 
-            return PartialView("CarsCount" , logic.TotalCarsAvailable(location));
+            return PartialView("_CarsCount" , logic.TotalCarsAvailable(location, fromDate, toDate));
         }
 
         public ActionResult About()

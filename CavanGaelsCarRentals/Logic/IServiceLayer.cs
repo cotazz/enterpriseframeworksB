@@ -10,7 +10,7 @@ namespace CavanGaelsCarRentals.Logic
     {
         LocationsUI ListAvailableLocations();
          
-        LocationCarsCount TotalCarsAvailable(string location);
+        LocationCarsCount TotalCarsAvailable(string location, string fromDate, string toDate);
 
         BookingUI ListAvailableCars(LocationsUI requestedTimePlace);
 

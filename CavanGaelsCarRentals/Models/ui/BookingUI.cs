@@ -12,7 +12,7 @@ namespace CavanGaelsCarRentals.Models.ui
           public double amount { get; set; }
           public DateTime fromDate { get; set; }
           public DateTime toDate { get; set; }
-          public MultiSelectList Cars { get; set; }
+          public List<Car> Cars { get; set; }
 
      }
 }
