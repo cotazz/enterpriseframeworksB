@@ -35,7 +35,7 @@ namespace CavanGaelsCarRentals.Logic
              // Request comes in with 3 paramaters:
              DateTime fromDate = requestedTimePlace.fromDate;
              DateTime toDate = requestedTimePlace.toDate;
-             string location = requestedTimePlace.locations.SelectedValues.ToString();
+             string location = requestedTimePlace.location;
 
              // Load available cars
              var cars = db.listAvailableCars(location, fromDate, toDate);

@@ -14,17 +14,18 @@ namespace CavanGaelsCarRentals.Controllers
     public class BookingController : Controller
     {
         private IServiceLayer logic = new ServiveLayer();
-        //
-        // GET: /Booking/
+        
 
+        //
+        // POST: /Booking/
+         [HttpPost]
         public ActionResult Index(LocationsUI requestedTimePlace)
         {
-            BookingUI carList = new BookingUI();
-            carList = logic.ListAvailableCars(requestedTimePlace);
-            return View(carList);
-             
-        }
+             BookingUI carList = new BookingUI();
+             carList = logic.ListAvailableCars(requestedTimePlace);
+             return View(carList);
 
+        }
 
          //
          // GET: /Booking/Create

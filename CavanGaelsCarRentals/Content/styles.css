@@ -75,7 +75,7 @@ ul{list-style-type:none;}
 #maincontent{width:719px; margin:0; padding:0; position:relative; background:url(../images/b_content.jpg) 0 0 no-repeat; clear:both}
 #inmaincontent{width:279px; margin:0; padding:0; position:relative;}
 
-#inmaincontent #rates{width:265px; height:162px; position:relative; margin:0; padding:16px 0 0 0;}
+#inmaincontent #rates{width:265px; height:210px; position:relative; margin:0; padding:16px 0 0 0;}
 #inmaincontent #rates h2{width:107px; height:21px; background:url(../images/h_quickrates.jpg) 0 0 no-repeat; text-indent:-20000px; margin: 0 0 0 14px;}
 
 form.search{width:260px; float:left; color:#fff; margin:20px 0 0 0; padding:0 0 0 5px;}
@@ -83,8 +83,10 @@ form.search label{padding-right:10px}
 form.search select{height:18px; background:#fff; border: #abadb3 1px solid; font:10px/14px Tahoma, sans-serif;}
 form.search input.submitBtn{margin:0 0 0 130px; padding:5px 0 0 0; width:103px; height:26px; line-height:0; font-size:0;}
 
-#inmaincontent #news{width:265px; position:relative; float:left;}
-#inmaincontent #news h2{width:132px; height:21px; background:url(../images/h_news.gif) 0 0 no-repeat; text-indent:-20000px; margin: 24px 0 15px 14px ;}
+.spacer
+
+#inmaincontent #news{padding-top: 50px; width:265px; position:relative; float:left;}
+#inmaincontent #news h2{width:132px; height:21px; background:url(../images/h_news.gif) 0 0 no-repeat; text-indent:-20000px; padding-top: 10px; margin: 0px 0 15px 14px ;}
 
 #inmaincontent #news ul{width:230px; margin:0 0 0 23px;}
 #inmaincontent #news ul li.dot{background:url(../images/bullet.jpg) 0 6px no-repeat; height:14px; padding:0 0 0 17px; font:10px/14px Tahoma, Arial, Helvetica, sans-serif; color:#832920; font-weight:bold;}

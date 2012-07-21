@@ -22,7 +22,7 @@
 <div id="rates">
 <h2>text</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm( "Index", "Booking", "POST")) {
     @Html.ValidationSummary(true)
     <!--
 		<form method="post" action="#" name="search" class="search">-->
@@ -33,67 +33,28 @@
             @Html.LabelFor(model => model.locations)
         </div>
         <div class="editor-field">
-            @Html.DropDownListFor(model => model.locations, Model.locations)
+            @Html.DropDownList("location", Model.locations)
             @Html.ValidationMessageFor(model => model.locations)
         </div>
-        
-        
-    }
+    
+    <div class="editor-label">
+            @Html.LabelFor(model => model.fromDate)
+        </div><div class="editor-field">
+    @Html.EditorFor(model => model.fromDate)</div>
 
-			<br /><br class="spacer"/>
-			<label>Pick-Up &nbsp;</label>
-            <select name="m1">
-			  <option>Jan</option>
-			  <option>Feb</option>
-			  <option>Mar</option>
-			  <option>Apr</option>
-			</select>
-            <select name="d1">
-			  <option>1</option>
-			  <option>2</option>
-			  <option>3</option>
-			  <option>4</option>
-			</select>
-            <select name="h1">
-			  <option>10</option>
-			  <option>11</option>
-			  <option>12</option>
-			  <option>13</option>
-			</select> : 
-            <select name="h2">
-			  <option>00</option>
-			  <option>15</option>
-			  <option>30</option>
-			  <option>45</option>
-			</select>
-			<br /><br class="spacer"/>
-            <label>Drop-Off</label>
-            <select name="m2">
-			  <option>Jan</option>
-			  <option>Feb</option>
-			  <option>Mar</option>
-			  <option>Apr</option>
-			</select>
-            <select name="d2">
-			  <option>1</option>
-			  <option>2</option>
-			  <option>3</option>
-			  <option>4</option>
-			</select>
-            <select name="h3">
-			  <option>10</option>
-			  <option>11</option>
-			  <option>12</option>
-			  <option>13</option>
-			</select> : 
-            <select name="h4">
-			  <option>00</option>
-			  <option>15</option>
-			  <option>30</option>
-			  <option>45</option>
-			</select>
-			<br /><br /><input type="image" src="images/btn_findcars.gif" tabindex="9" title="Submit" class="submitBtn" />
-		</form>
+
+    <div class="editor-label">
+            @Html.LabelFor(model => model.toDate)
+        </div><div class="editor-field">
+       @Html.EditorFor(model => model.toDate) </div>
+        <br /><br />
+        
+    
+    <input type="image" src="images/btn_findcars.gif" tabindex="9" title="Submit" class="submitBtn" />
+
+}
+
+			
 </div>
 
 <div id="news">
