@@ -1,9 +1,9 @@
 ﻿@model Nullable<System.DateTime>
 @if ( Model.HasValue ) {
-   @Html.TextBox( "" , String.Format( "{0:yyyy-MM-dd}" , Model.Value ) , new  { @class = "textbox" , @style = "width:400px;" } )
+   @Html.TextBox( "" , String.Format( "{0:dd/MM/yyyy}" , Model.Value ) , new  { @class = "textbox" , @style = "width:400px;" } )
 }
 else {
-   @Html.TextBox( "" , String.Format( "{0:yyyy-MM-dd}" , DateTime.Now ) , new { @class = "textbox" , @style = "width:400px;" } )
+   @Html.TextBox( "" , String.Format( "{0:dd/MM/yyyy}" , DateTime.Now ) , new { @class = "textbox" , @style = "width:400px;" } )
 }
 
 @{
