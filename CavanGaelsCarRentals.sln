@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{9E1E05A3-AC52-4C26-8472-6F2E42BFE8C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{D45B8798-B52F-40D1-91F0-3BEC4F9F2922}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{46713EE2-DC2B-4AD1-90FF-666D4EB9729D}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = CavanGaelsCarRentals.vsmdi
@@ -29,6 +33,14 @@ Global
 		{9E1E05A3-AC52-4C26-8472-6F2E42BFE8C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E1E05A3-AC52-4C26-8472-6F2E42BFE8C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E1E05A3-AC52-4C26-8472-6F2E42BFE8C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D45B8798-B52F-40D1-91F0-3BEC4F9F2922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D45B8798-B52F-40D1-91F0-3BEC4F9F2922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D45B8798-B52F-40D1-91F0-3BEC4F9F2922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D45B8798-B52F-40D1-91F0-3BEC4F9F2922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46713EE2-DC2B-4AD1-90FF-666D4EB9729D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46713EE2-DC2B-4AD1-90FF-666D4EB9729D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46713EE2-DC2B-4AD1-90FF-666D4EB9729D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46713EE2-DC2B-4AD1-90FF-666D4EB9729D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
