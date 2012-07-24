@@ -53,6 +53,10 @@
       <Project>{9E1E05A3-AC52-4C26-8472-6F2E42BFE8C1}</Project>
       <Name>BusinessLogic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CavanGaelsCarRentals\CavanGaelsCarRentals.csproj">
+      <Project>{BE650D38-1E78-4C10-9E8A-B8AA90D2560D}</Project>
+      <Name>CavanGaelsCarRentals</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
