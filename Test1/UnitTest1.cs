@@ -36,7 +36,7 @@ namespace Test1
         public void it_must_include_a_pickup_date()
         {
             //Arrange
-            DateTime pickupDate =  new DateTime(2012, 1, 1);
+            DateTime pickupDate =  new DateTime(2013, 1, 1);
 
             //Act
 
