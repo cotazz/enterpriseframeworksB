@@ -14,6 +14,7 @@ namespace BusinessLogic
           private DateTime _toDate = DateTime.Now;
           private int _numberOfDays = 0;
 
+         
           public BookingBObj(CarBObj car, SupplierBObj supplier)
           {
                this._car = car;
@@ -37,9 +38,32 @@ namespace BusinessLogic
 
           public void setBookingRange(DateTime startDate, int numberOfDays)
           {
-               this._fromDate = startDate;
-               this._numberOfDays = numberOfDays;
-               this._toDate = startDate.AddDays(numberOfDays);
+              if (startDate < DateTime.Now)
+                  throw new ArgumentException();
+              else
+                   this._fromDate = startDate;
+
+              if (numberOfDays < 1)
+                  throw new ArgumentException();
+              else
+                this._numberOfDays = numberOfDays;
+
+              this._toDate = startDate.AddDays(numberOfDays);
+          }
+
+          public void setCustomer(CustomerBObj c)
+          {
+              _customer = c;
+          }
+
+          public CustomerBObj getCustomer()
+          {
+              return _customer;
+          }
+
+          public DateTime startDate()
+          {
+              return _fromDate;
           }
 
           public void setBookingRange(DateTime startDate, DateTime endDate)
@@ -49,7 +73,7 @@ namespace BusinessLogic
                this._numberOfDays = (startDate - endDate).Days;
           }
 
-          public Decimal totalCost()
+          public Decimal getTotalCost()
           {
                return _car.dailyRate() * _numberOfDays;
           }

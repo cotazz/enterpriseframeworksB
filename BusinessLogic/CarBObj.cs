@@ -9,11 +9,23 @@ namespace BusinessLogic
      {
           private SupplierBObj _supplier = null;
           private Decimal _dailyRate = 50;
+          private int _carId;
+
 
           public CarBObj(SupplierBObj supplier)
           {
                _supplier = supplier;
           }
+
+         public void setId(int id)
+         {
+             _carId = id;
+         }
+
+         public int getId()
+         {
+             return _carId;
+         }
 
           public SupplierBObj getSupplier()
           {
@@ -24,5 +36,10 @@ namespace BusinessLogic
                return _dailyRate;
           }
 
+          public void setDailyRate(decimal rate)
+          {
+              _dailyRate = rate;
+          }
      }
+         
 }
