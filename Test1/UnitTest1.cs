@@ -3,6 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using BusinessLogic;
 
 namespace Test1
 {
@@ -12,6 +13,10 @@ namespace Test1
         [TestMethod]
         public void TestMethod1()
         {
+
+            var booking = new BookingBObj();
+
+
         }
     }
 }
