@@ -32,6 +32,16 @@ namespace CavanGaelsCarRentals.DataAccess
                                    toDate < u.start_date
                           ) select Car;
               return query.ToList();
-              }
+         }
+
+         public int getCarIdByReg(string car_reg)
+         {
+              var serach = from Car in db.Cars
+                           where
+                                Car.car_reg.Equals(car_reg)
+                           select Car;
+              var car = serach.FirstOrDefault();
+              return car.Id;
+         }
     }
 }

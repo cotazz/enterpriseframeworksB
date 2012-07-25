@@ -3,21 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CavanGaelsCarRentals", "CavanGaelsCarRentals\CavanGaelsCarRentals.csproj", "{BE650D38-1E78-4C10-9E8A-B8AA90D2560D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5310D528-0938-49A1-A6D1-74EEEDC3E75B}"
-	ProjectSection(SolutionItems) = preProject
-		CavanGaelsCarRentals1.vsmdi = CavanGaelsCarRentals1.vsmdi
-		Local.testsettings = Local.testsettings
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{9E1E05A3-AC52-4C26-8472-6F2E42BFE8C1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test1", "Test1\Test1.csproj", "{A9937E00-A1F7-46E9-9DEF-469E214084CF}"
 EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = CavanGaelsCarRentals1.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

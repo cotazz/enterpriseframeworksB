@@ -68,10 +68,12 @@ namespace BusinessLogic
 
           public void setBookingRange(DateTime startDate, DateTime endDate)
           {
-               this._fromDate = startDate;
-               this._toDate = endDate;
-               this._numberOfDays = (startDate - endDate).Days;
+                           
+               TimeSpan span = endDate - startDate;
+               int numberOfDays = span.Days;
+               this.setBookingRange(startDate, numberOfDays);
           }
+
 
           public Decimal getTotalCost()
           {

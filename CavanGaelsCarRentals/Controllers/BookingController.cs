@@ -31,24 +31,13 @@ namespace CavanGaelsCarRentals.Controllers
          // GET: /Booking/Create
         public ActionResult Create(string car_reg, DateTime fromdate, DateTime todate, string place)
         {
-       //      List<Car> cars = db.Cars.ToList();
-         //    BookingUI model = new BookingUI
-         //    {
-
-         //           Cars = new MultiSelectList(
-         ////                   cars,
-         //                   "Id",
-         //                   "car_reg",
-         //                   cars.Select(c => c.Id)
-         //                   )
-
-         //    };
-         //    return View(model);
             BookingCreateUI showChosenCar = new BookingCreateUI();
+            Car car = new Car();
+            car.car_reg = car_reg;
             showChosenCar.fromDate = fromdate;
             showChosenCar.toDate = todate;
-            showChosenCar.car.car_reg = car_reg;
-              showChosenCar.location = place;
+            showChosenCar.car = car;
+            showChosenCar.location = place;
             showChosenCar = logic.ShowChosenCar(showChosenCar);
             return View(showChosenCar);
         }

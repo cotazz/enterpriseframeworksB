@@ -27,8 +27,8 @@ namespace CavanGaelsCarRentals.Logic
 
         public Models.ui.LocationCarsCount TotalCarsAvailable(string location, string fromDate, string toDate)
         {
-             DateTime from = DateTime.ParseExact(fromDate, "d/M/yyyy", null);
-             DateTime to = DateTime.ParseExact(fromDate, "d/M/yyyy", null); 
+             DateTime from = DateTime.ParseExact(fromDate, "yyyy/M/d", null);
+             DateTime to = DateTime.ParseExact(fromDate, "yyyy/M/d", null); 
              var cars = db.listAvailableCars(location, from, to);
              return new LocationCarsCount
              {
@@ -62,7 +62,20 @@ namespace CavanGaelsCarRentals.Logic
         public Models.ui.BookingCreateUI ShowChosenCar(BookingCreateUI car)
         {
             
+             var supplierObj = new SupplierBObj();
+             var carObj = new CarBObj(supplierObj);
+             var booking = new BookingBObj(carObj, supplierObj);
 
+             var startDate = car.fromDate;
+             var endDate = car.toDate;
+             var car_reg = car.car.car_reg;
+
+             var carId = db.getCarIdByReg(car_reg);
+
+
+             carObj.setId(carId);
+             
+             booking.setBookingRange(startDate, endDate);
              var result = new BookingCreateUI();
              return result;
         }
