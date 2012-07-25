@@ -145,7 +145,7 @@
     <Compile Include="Ingestion\CSVParser.cs" />
     <Compile Include="Ingestion\IDataparser.cs" />
     <Compile Include="Logic\IServiceLayer.cs" />
-    <Compile Include="Logic\ServiveLayer.cs" />
+    <Compile Include="Logic\ServiceLayer.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\Car.cs" />
@@ -284,6 +284,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Supplier\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

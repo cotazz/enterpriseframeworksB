@@ -14,8 +14,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test1", "Test1\Test1.csproj", "{A9937E00-A1F7-46E9-9DEF-469E214084CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnavailabilityCreator", "UnavailabilityCreator\UnavailabilityCreator.csproj", "{AA1E59DB-D74E-4AF4-B7C8-5294B1E6AA87}"
-EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = CavanGaelsCarRentals1.vsmdi
@@ -37,10 +35,6 @@ Global
 		{A9937E00-A1F7-46E9-9DEF-469E214084CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9937E00-A1F7-46E9-9DEF-469E214084CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9937E00-A1F7-46E9-9DEF-469E214084CF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA1E59DB-D74E-4AF4-B7C8-5294B1E6AA87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA1E59DB-D74E-4AF4-B7C8-5294B1E6AA87}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA1E59DB-D74E-4AF4-B7C8-5294B1E6AA87}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA1E59DB-D74E-4AF4-B7C8-5294B1E6AA87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

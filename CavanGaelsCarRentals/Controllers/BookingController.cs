@@ -13,7 +13,7 @@ namespace CavanGaelsCarRentals.Controllers
 {
     public class BookingController : Controller
     {
-        private IServiceLayer logic = new ServiveLayer();
+        private IServiceLayer logic = new ServiceLayer();
         
 
         //
@@ -29,7 +29,7 @@ namespace CavanGaelsCarRentals.Controllers
 
          //
          // GET: /Booking/Create
-        public ActionResult Create(BookingUI selectedCar)
+        public ActionResult Create(string car_reg, DateTime fromdate, DateTime todate, string place)
         {
        //      List<Car> cars = db.Cars.ToList();
          //    BookingUI model = new BookingUI
@@ -45,7 +45,11 @@ namespace CavanGaelsCarRentals.Controllers
          //    };
          //    return View(model);
             BookingCreateUI showChosenCar = new BookingCreateUI();
-            showChosenCar = logic.ShowChosenCar(selectedCar);
+            showChosenCar.fromDate = fromdate;
+            showChosenCar.toDate = todate;
+            showChosenCar.car.car_reg = car_reg;
+              showChosenCar.location = place;
+            showChosenCar = logic.ShowChosenCar(showChosenCar);
             return View(showChosenCar);
         }
 
@@ -53,7 +57,7 @@ namespace CavanGaelsCarRentals.Controllers
         // POST: /Booking/Create
 
         [HttpPost]
-        public ActionResult Create(BookingCreateUI booking)
+        public ActionResult View1(BookingCreateUI booking)
         {
             // Booking booking = new Booking();
             // booking.booking_count = 0;

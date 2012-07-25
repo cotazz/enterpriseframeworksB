@@ -27,15 +27,15 @@ namespace CavanGaelsCarRentals.Ingestion
 
                     for (int i = 0; i < fieldCount; i++)
                     {
-                         if (headers[i].Equals("fromCurrency"))
+                         if (headers[i].Equals("car_reg"))
                          {
                               carObj.car_reg= csv[i];
                          }
-                         else if (headers[i].Equals("toCurrency"))
+                         else if (headers[i].Equals("cost_per_day"))
                          {
                               carObj.cost_per_day = Convert.ToDecimal(csv[i]);
                          }
-                         else if (headers[i].Equals("rate"))
+                         else if (headers[i].Equals("location"))
                          {
                               carObj.location = csv[i];
 

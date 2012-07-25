@@ -13,8 +13,10 @@
         <th></th>
         <th>Car Reg</th>
         <th>Amount</th>
+        <th></th>
     </tr>
-    @foreach (var car in Model.Cars)
+ 
+    @foreach (var car in Model.Cars )
 {
     <tr><td>
         <img src="" alt="car" />
@@ -22,8 +24,17 @@
         @Html.DisplayFor(modelItem => car.car_reg)
     </td><td>
         @Html.DisplayFor(modelItem => car.cost_per_day)
-    </td></tr>
-
+    </td>
+    <td>@Html.RouteLink("Book", new
+   {
+       controller = "Booking",
+       action = "Create",
+          car_reg = car.car_reg,
+          fromdate = Model.fromDate,
+          todate= Model.toDate,
+            place = Model.Location} )</td>
+    </tr>
+    
     
 }
 </table>

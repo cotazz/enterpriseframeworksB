@@ -9,7 +9,7 @@ using BusinessLogic;
 
 namespace CavanGaelsCarRentals.Logic
 {
-    public class ServiveLayer : IServiceLayer
+    public class ServiceLayer : IServiceLayer
     {
          
          private Repository db = new Repository();
@@ -55,12 +55,16 @@ namespace CavanGaelsCarRentals.Logic
              carResults.toDate = toDate;
              carResults.fromDate = fromDate;
              carResults.id = 1;
+             carResults.Location = location;
              return carResults;
         }
 
-        public Models.ui.BookingCreateUI ShowChosenCar(Models.ui.BookingUI selectedCar)
+        public Models.ui.BookingCreateUI ShowChosenCar(BookingCreateUI car)
         {
-            throw new NotImplementedException();
+            
+
+             var result = new BookingCreateUI();
+             return result;
         }
 
         public Models.ui.BookingConfirmUI ShowBookingConfirm(Models.ui.BookingCreateUI booking)
