@@ -28,7 +28,7 @@ namespace CavanGaelsCarRentals.Logic
         public Models.ui.LocationCarsCount TotalCarsAvailable(string location, string fromDate, string toDate)
         {
              DateTime from = DateTime.ParseExact(fromDate, "yyyy/M/d", null);
-             DateTime to = DateTime.ParseExact(fromDate, "yyyy/M/d", null); 
+             DateTime to = DateTime.ParseExact(toDate, "yyyy/M/d", null); 
              var cars = db.listAvailableCars(location, from, to);
              return new LocationCarsCount
              {
