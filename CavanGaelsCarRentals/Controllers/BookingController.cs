@@ -37,45 +37,25 @@ namespace CavanGaelsCarRentals.Controllers
             showChosenCar.fromDate = fromdate;
             showChosenCar.toDate = todate;
             showChosenCar.car = car;
-            showChosenCar.location = place;
-            showChosenCar = logic.ShowChosenCar(showChosenCar);
-            return View(showChosenCar);
+            showChosenCar.place = place;
+
+
+            BookingCreateUI result = logic.ShowChosenCar(showChosenCar);
+            return View(result);
         }
 
         //
-        // POST: /Booking/Create
+        // POST: /Booking/Create1
 
         [HttpPost]
-        public ActionResult View1(BookingCreateUI booking)
+        public ActionResult Create1(BookingCreateUI booking)
         {
-            // Booking booking = new Booking();
-            // booking.booking_count = 0;
-            //// Car car = db.Cars.Find(collection.Cars);
-            //// booking.Car = car;
-            // booking.date = collection.fromDate;
-            // var s = db.Suppliers.FirstOrDefault();
-            // var cars = s.Cars;
-            // booking.Customer = db.Customers.FirstOrDefault();
-            // booking.email = "test@example.com";
-            // // temp.Insert("1", booking);
-            // db.Bookings.Add(booking);
-            // db.SaveChanges();     
-            // return RedirectToAction("CreateStep2", booking);
             BookingConfirmUI bookingConfirm = new BookingConfirmUI();
             bookingConfirm = logic.ShowBookingConfirm(booking);
             return View(bookingConfirm);
         }
 
-         //
-         // GET: /Booking/CreateStep2
-        public ActionResult CreateStep2(Booking Booking)
-        {
-             
-
-             
-               //return View(logic.SBookingConfirm.ShowConfirmUI(Booking));
-             return View();
-        }
+         
 
     }
 }

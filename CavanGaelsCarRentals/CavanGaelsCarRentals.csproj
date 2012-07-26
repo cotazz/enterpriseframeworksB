@@ -271,7 +271,7 @@
     <Content Include="Views\Booking\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Booking\CreateStep2.cshtml" />
+    <Content Include="Views\Booking\Create1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_CarsCount.cshtml" />

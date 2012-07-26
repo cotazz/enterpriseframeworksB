@@ -43,5 +43,36 @@ namespace CavanGaelsCarRentals.DataAccess
               var car = serach.FirstOrDefault();
               return car.Id;
          }
+
+         public List<Unavailable> listUnavailabilitiesForCar(int car_id)
+         {
+              var query = from Unavailable in db.Unavailabilities
+                           where
+                                Unavailable.CarId.Equals(car_id)
+                           select Unavailable;
+              return query.ToList();
+         }
+
+
+         public void createNewBooking(int customer_id, int carId, DateTime startDate, DateTime endDate)
+         {
+              Booking b = new Booking();
+              b.CarId = carId;
+              b.CustomerId = customer_id;
+              b.date = DateTime.Now;
+              Unavailable u = new Unavailable();
+              u.CarId = carId;
+              u.start_date = startDate;
+              u.end_date = endDate;
+              u.reason_text = "Booking";
+              db.Bookings.Add(b);
+              db.Unavailabilities.Add(u);
+              db.SaveChanges();
+         }
+
+         public void createUnavailable(DateTime fromDate, DateTime toDate)
+         {
+             
+         }
     }
 }

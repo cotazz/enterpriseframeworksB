@@ -1,4 +1,4 @@
-﻿@model CavanGaelsCarRentals.Models.ui.BookingUI
+﻿@model CavanGaelsCarRentals.Models.ui.BookingCreateUI
 
 @{
     ViewBag.Title = "Create";
@@ -6,42 +6,65 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm("Create1", "Booking", new { 
+    fromDate = Model.fromDate,
+    toDate = Model.toDate,
+    place = Model.place,
+    car_reg = Model.car.car_reg
+}))
+{
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>BookingUI</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Cars)
-        </div>
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.Cars, Model.Cars)
-            @Html.ValidationMessageFor(model => model.Cars)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.amount)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.amount)
-            @Html.ValidationMessageFor(model => model.amount)
-        </div>
-
-        <div class="editor-label">
             @Html.LabelFor(model => model.fromDate)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.fromDate)
-            @Html.ValidationMessageFor(model => model.fromDate)
+            @Html.DisplayFor(model => model.fromDate)
         </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.toDate)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.toDate)
-            @Html.ValidationMessageFor(model => model.toDate)
+            @Html.DisplayFor(model => model.toDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.place)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.place)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.amount)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.amount)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.car.car_reg)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.car.car_reg)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.valid)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.valid)
+        </div>
+        <p> Credit Card No.</p>
+        <div class="editor-label">
+            @Html.EditorFor(model => model.creditcard)
+        </div>
+        <p> Expiry Day:</p>
+        <div class="editor-label">
+            @Html.EditorFor(model => model.expiryDay)
         </div>
 
         <p>
