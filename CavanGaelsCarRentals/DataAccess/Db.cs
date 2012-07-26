@@ -19,13 +19,13 @@ namespace CavanGaelsCarRentals.DataAccess
 
           public Db()
           {
-               if (!( this.Database.Exists() ))
-               {    // Create a default SQL Express DB
-                    this.Database.Create();
-               }
-          
+               var cs = "Server=tcp:ygir540x4r.data" + "base.win" + "dows.net,1433;Database=cavangaels; User ID=ca" +
+                    "vangaels12345@ygir540x4r; P" +"ass" + "wor" + "d=What'supdoc" +
+                    "?;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+               this.Database.Connection.ConnectionString = cs;
           }
 
           public DbSet<Supplier> Suppliers { get; set; }
+
      }
 }

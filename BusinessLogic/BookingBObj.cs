@@ -12,6 +12,8 @@ namespace BusinessLogic
           private CustomerBObj _customer = null;
           private DateTime _fromDate = DateTime.Now;
           private DateTime _toDate = DateTime.Now;
+          private DateTime _unavailableStart = DateTime.Now;
+          private DateTime _unavailableEnd = DateTime.Now;
           private int _numberOfDays = 0;
 
          
@@ -78,6 +80,21 @@ namespace BusinessLogic
           public Decimal getTotalCost()
           {
                return _car.dailyRate() * _numberOfDays;
+          }
+                    
+
+          public bool valid(List<UnavailableDateBObj> calendar)
+          {
+
+               if (calendar.All(u => _fromDate > u.toDate || _toDate < u.fromDate))
+                    return true;
+               else
+                    return false;
+          }
+
+          public UnavailableDateBObj create()
+          {
+               return new UnavailableDateBObj { fromDate = _fromDate, toDate = _toDate };
           }
 
      }

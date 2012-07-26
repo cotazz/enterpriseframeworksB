@@ -114,6 +114,79 @@ namespace Test1
             Assert.AreEqual(car.dailyRate() * 10, booking.getTotalCost());
 
         }
+
+         [TestMethod]
+         public void Booking_should_not_be_valid_if_car_unavailable_before_and_during_period()
+         {
+              DateTime pickupDate = new DateTime(2012, 12, 31);
+              DateTime alreadyTakenDateBefore = new DateTime(2012,11,10);
+              DateTime alreadyTakenDateAfter = new DateTime(2013, 02, 10);
+              DateTime alreadyTakenDateDuring = new DateTime(2013, 01, 04);
+
+              var car = new CarBObj(new SupplierBObj());
+              car.setDailyRate(50);
+
+              var booking = BookingBObj.newBooking(car);
+              booking.setBookingRange(pickupDate, 10);
+
+              var customer = new CustomerBObj();
+              customer.setId(1);
+
+              booking.setCustomer(customer);
+              car.setId(1);
+
+              var takenDates = new List<UnavailableDateBObj>();
+
+              var unavailability = new UnavailableDateBObj { fromDate = alreadyTakenDateBefore, toDate = alreadyTakenDateDuring };
+              takenDates.Add(unavailability);
+
+              Assert.IsFalse(booking.valid(takenDates));
+         }
+
+         [TestMethod]
+         public void Booking_should_be_valid_if_no_car_unavailabilities_exist()
+         {
+              DateTime pickupDate = new DateTime(2012, 12, 31);
+              var car = new CarBObj(new SupplierBObj());
+              car.setDailyRate(50);
+
+              var booking = BookingBObj.newBooking(car);
+              booking.setBookingRange(pickupDate, 10);
+
+              var customer = new CustomerBObj();
+              customer.setId(1);
+
+              booking.setCustomer(customer);
+              car.setId(1);
+
+              var takenDates = new List<UnavailableDateBObj>();
+              Assert.IsTrue(booking.valid(takenDates));
+
+         }
+
+         [TestMethod]
+         public void Booking_should_create_and_return_an_UnavailableDateBObj()
+         {
+              DateTime pickupDate = new DateTime(2012, 12, 31);
+              var car = new CarBObj(new SupplierBObj());
+              car.setDailyRate(50);
+
+              var booking = BookingBObj.newBooking(car);
+              booking.setBookingRange(pickupDate, 10);
+
+              var unavailable = new UnavailableDateBObj { fromDate = pickupDate, toDate = pickupDate.AddDays(10) };
+              var customer = new CustomerBObj();
+              customer.setId(1);
+
+              booking.setCustomer(customer);
+              car.setId(1);
+
+              var takenDates = new List<UnavailableDateBObj>();
+
+              
+              Assert.AreEqual(booking.create().ToString() , unavailable.ToString() );
+
+         }
     }
 }
 
