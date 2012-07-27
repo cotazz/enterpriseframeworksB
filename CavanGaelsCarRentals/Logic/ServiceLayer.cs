@@ -52,7 +52,16 @@ namespace CavanGaelsCarRentals.Logic
 
              BookingUI carResults = new BookingUI();
              carResults.amount = cars.Count();
-             carResults.Cars = cars.ToList();
+
+             foreach (var car in cars)
+             {
+                  CarObj c = new CarObj();
+                  c.Car = car;
+                  TimeSpan span = toDate - fromDate;
+                  int numberOfDays = span.Days;
+                  c.TotalCost = car.cost_per_day * numberOfDays;
+                  carResults.Cars.Add(c);
+             }
              carResults.toDate = toDate;
              carResults.fromDate = fromDate;
              carResults.id = 1;
@@ -146,9 +155,13 @@ namespace CavanGaelsCarRentals.Logic
              if (b != null)
              {
                   result.CarReg = b.CarReg;
-                  result.Cost = b.Cost;
+                  TimeSpan span = b.toDate - b.fromDate;
+                  int numberOfDays = span.Days;
+                  result.Cost = b.Cost * numberOfDays;
                   result.CustomerEmail = b.CustomerEmail;
                   result.SupplierEmail = b.SupplierEmail;
+                  result.fromDate = b.fromDate;
+                  result.toDate = b.toDate;
              }
 
              return result;
