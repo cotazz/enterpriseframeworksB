@@ -6,6 +6,7 @@ using CavanGaelsCarRentals.DataAccess;
 using CavanGaelsCarRentals.Models.ui;
 using System.Web.Mvc;
 using BusinessLogic;
+using CavanGaelsCarRentals.Models;
 
 namespace CavanGaelsCarRentals.Logic
 {
@@ -93,7 +94,7 @@ namespace CavanGaelsCarRentals.Logic
                   
         }
 
-        public Models.ui.BookingConfirmUI ShowBookingConfirm(Models.ui.BookingCreateUI car, int userId)
+        public Models.ui.BookingConfirmUI CreateBooking(Models.ui.BookingCreateUI car, int userId)
         {
              var result = new BookingConfirmUI();
 
@@ -123,16 +124,36 @@ namespace CavanGaelsCarRentals.Logic
 
 
              car.valid = booking.valid(unavailabilities);
-             car.amount = booking.getTotalCost();
-             UnavailableDateBObj date = booking.create();
-             var customer_id = userId;
-             db.createNewBooking(customer_id, carId, startDate, endDate);
+             if (car.valid)
+             {
+                  car.amount = booking.getTotalCost();
+                  UnavailableDateBObj date = booking.create();
 
-             result.BookingId = 21425;
+                  var customer_id = userId;
+                  result.BookingId = db.createNewBooking(customer_id, carId, startDate, endDate);
+
+             }
              result.CarReg = car_reg;
              result.CostPerDay = booking.getTotalCost();
-             
              return result;
         }
+
+        public Models.ui.BookingConfirmUI ShowBookingConfirm(int bookingId, int userId)
+        {
+             var result = new BookingConfirmUI();
+             result.BookingId = bookingId;
+             BookingConfirmDTO b = db.getBooking(bookingId, userId);
+             if (b != null)
+             {
+                  result.CarReg = b.CarReg;
+                  result.CostPerDay = b.CostPerDay;
+                  result.CustomerEmail = b.CustomerEmail;
+                  result.SupplierEmail = b.SupplierEmail;
+             }
+
+             return result;
+        }
+
+
     }
 }

@@ -151,6 +151,7 @@
     <Compile Include="Logic\ServiceLayer.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Booking.cs" />
+    <Compile Include="Models\BookingConfirmDTO.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="DataAccess\Db.cs" />
@@ -267,7 +268,7 @@
     <Content Include="Views\Booking\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Booking\Create1.cshtml" />
+    <Content Include="Views\Booking\Confirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_CarsCount.cshtml" />
@@ -288,7 +289,9 @@
     <Content Include="Views\Account\SRegister.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="web.config" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </Content>

@@ -3,18 +3,7 @@
 @{
     ViewBag.Title = "Home Pag.e";
 }
-@section featured {
-    <section class="featured">
-        <div class="content-wrapper">
-        <!--
-            <hgroup class="title">
-                <h1>@ViewBag.Title.</h1>
-                <h2>@ViewBag.Message</h2>
-            </hgroup>  -->
-           
-        </div>
-    </section>
-}
+
 
 
 <div id="overs">
@@ -64,7 +53,7 @@
 		<form method="post" action="#" name="search" class="search">-->
     
     
-    
+     <p style="position: relative; top: 40px; left: 140px">Cars Available: <span id="result"></span></p>
 			<div class="editor-label">
             @Html.LabelFor(model => model.locations)
         </div>
@@ -84,7 +73,7 @@
         </div><div class="editor-field">
        @Html.EditorFor(model => model.toDate) </div>
         <br /><br />
-        <p>Cars Available: <span id="result"></span></p>
+        
     
     <input id = "submit" type="image" src="images/btn_findcars.gif" tabindex="9" title="Submit" class="submitBtn" />
 

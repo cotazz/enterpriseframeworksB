@@ -60,10 +60,10 @@ namespace CavanGaelsCarRentals.Controllers
         }
 
         //
-        // POST: /Booking/Create1
+        // POST: /Booking/Create
 
         [HttpPost]
-        public ActionResult Create1(BookingCreateUI booking)
+        public ActionResult Create(BookingCreateUI booking)
         {
              var email = "";
              if (User.Identity.IsAuthenticated)
@@ -71,12 +71,33 @@ namespace CavanGaelsCarRentals.Controllers
              UserObj u = CustomUserService.loadUser(email);
              if (!u.Customer)
                   return RedirectToAction("Login", "Account");
-            BookingConfirmUI bookingConfirm = new BookingConfirmUI();
-            bookingConfirm = logic.ShowBookingConfirm(booking, u.Id() );
-            return View(bookingConfirm);
-            
+
+             if (ModelState.IsValid)
+             {
+                  BookingConfirmUI bookingConfirm = new BookingConfirmUI();
+                  bookingConfirm = logic.CreateBooking(booking, u.Id());
+                  return RedirectToAction("Confirm", new { booking_id = bookingConfirm.BookingId });
+             }
+
+             return View(booking);
         }
 
+        //
+        // GET: /Booking/Confirm
+
+        public ActionResult Confirm(int booking_id)
+        {
+             var email = "";
+             if (User.Identity.IsAuthenticated)
+                  email = Membership.GetUser().Email;
+             UserObj u = CustomUserService.loadUser(email);
+             if (!u.Customer)
+                  return RedirectToAction("Login", "Account");
+             BookingConfirmUI bookingConfirm = new BookingConfirmUI();
+             bookingConfirm = logic.ShowBookingConfirm(booking_id, u.Id());
+             return View(bookingConfirm);
+
+        }
          
 
     }

@@ -52,9 +52,8 @@ namespace CavanGaelsCarRentals.DataAccess
                            select Unavailable;
               return query.ToList();
          }
-
-
-         public void createNewBooking(int customer_id, int carId, DateTime startDate, DateTime endDate)
+         
+         public int createNewBooking(int customer_id, int carId, DateTime startDate, DateTime endDate)
          {
               Booking b = new Booking();
               b.CarId = carId;
@@ -68,11 +67,28 @@ namespace CavanGaelsCarRentals.DataAccess
               db.Bookings.Add(b);
               db.Unavailabilities.Add(u);
               db.SaveChanges();
+              return b.Id;
          }
 
-         public void createUnavailable(DateTime fromDate, DateTime toDate)
+         public BookingConfirmDTO getBooking(int bookingId, int user)
          {
-             
+              var booking = db.Bookings.Where(b => b.Id.Equals(bookingId) && b.CustomerId.Equals(user)).FirstOrDefault();
+              if (booking != null && booking.Id > 0)
+              {
+                   var car = db.Cars.First(c => c.Id.Equals(booking.CarId));
+                   var supplier = db.Suppliers.First(s => s.Id.Equals(car.SupplierId));
+                   return new BookingConfirmDTO
+                   {
+                        BookingId = booking.Id,
+                        CarReg = car.car_reg,
+                        SupplierEmail = supplier.email,
+                        CustomerEmail = booking.email,
+                        CostPerDay = booking.Car.cost_per_day
+                   };
+              }
+              return null;
          }
+
+
     }
 }
