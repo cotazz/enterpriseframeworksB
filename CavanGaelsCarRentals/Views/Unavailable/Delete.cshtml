@@ -1,0 +1,46 @@
+﻿@model CavanGaelsCarRentals.Models.Unavailable
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Unavailable</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.reason_text)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.reason_text)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.start_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.start_date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.end_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.end_date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Car.car_reg)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Car.car_reg)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

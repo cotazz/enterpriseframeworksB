@@ -1,0 +1,59 @@
+﻿@model CavanGaelsCarRentals.Models.Unavailable
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Unavailable</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.reason_text)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.reason_text)
+            @Html.ValidationMessageFor(model => model.reason_text)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.start_date)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.start_date)
+            @Html.ValidationMessageFor(model => model.start_date)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.end_date)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.end_date)
+            @Html.ValidationMessageFor(model => model.end_date)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CarId, "Car")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CarId", String.Empty)
+            @Html.ValidationMessageFor(model => model.CarId)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

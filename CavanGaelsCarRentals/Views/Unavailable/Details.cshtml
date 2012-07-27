@@ -1,0 +1,43 @@
+﻿@model CavanGaelsCarRentals.Models.Unavailable
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Unavailable</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.reason_text)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.reason_text)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.start_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.start_date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.end_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.end_date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Car.car_reg)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Car.car_reg)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

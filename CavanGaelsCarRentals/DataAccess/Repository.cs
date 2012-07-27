@@ -30,7 +30,7 @@ namespace CavanGaelsCarRentals.DataAccess
                           && Car.Unavailablile.All(
                               u => fromDate > u.end_date ||
                                    toDate < u.start_date
-                          ) select Car;
+                          ) orderby Car.cost_per_day ascending select Car;
               return query.ToList();
          }
 
