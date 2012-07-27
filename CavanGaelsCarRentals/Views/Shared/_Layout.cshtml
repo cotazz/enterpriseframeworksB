@@ -28,7 +28,7 @@
 <li class="vehicles"><a href="#" title="Vehicles">Vehicles</a></li>
 <li class="contacts">@Html.ActionLink("Contact", "Contact", "Home")</li>
 
-<li class="login / register"><a href="#" title="Login / Register">Login / Register</a></li>
+<li class="login / register">@Html.Partial("_LoginPartial")</li>
 </ul>
 </div>
 
@@ -51,7 +51,9 @@
 
 <img src="images/call.jpg" alt="" width="233" height="76" />
 
-<p>@Html.ActionLink("Home", "Index", "Home") | <a href="#">ABOUT US</a> | <a href="#">RENT A CAR</a> | <a href="#">VEHICLES</a> | <a href="#">PRICES</a> | <a href="#">SUPPORT INFO</a> | <a href="#">CONTACTS</a> | @Html.ActionLink("CSV Upload", "Index", "Supplier")<br/>
+<p>@Html.ActionLink("Home", "Index", "Home") | <a href="#">ABOUT US</a> | <a href="#">RENT A CAR</a> | <a href="#">VEHICLES</a> | <a href="#">PRICES</a> | <a href="#">SUPPORT INFO</a> | <a href="#">CONTACTS</a>
+<br />
+@Html.ActionLink("CSV Upload", "Index", "Supplier") | @Html.ActionLink("Register Supplier", "SRegister", "Account")<br/>
 Copyright &copy; Cavan Gaels.<a></a></p>
 </div>
 </div>

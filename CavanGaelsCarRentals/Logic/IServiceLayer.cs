@@ -16,7 +16,7 @@ namespace CavanGaelsCarRentals.Logic
 
         BookingCreateUI ShowChosenCar(BookingCreateUI selectedCar);
 
-        BookingConfirmUI ShowBookingConfirm(BookingCreateUI booking);
+        BookingConfirmUI ShowBookingConfirm(BookingCreateUI booking, int userId);
 
     }
 }

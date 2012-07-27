@@ -13,8 +13,7 @@
     Passwords must be at least @Membership.MinRequiredPasswordLength characters long.
 </p>
 
-@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
-{
+@using (Html.BeginForm()) {
     @Html.ValidationSummary()
 
     <fieldset>

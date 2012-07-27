@@ -32,6 +32,12 @@
     </fieldset>
     <p>
         @Html.ActionLink("Register", "Register") if you don't have an account.
+        @Html.RouteLink("Register", new
+   {
+       controller = "Account",
+       action = "Register",
+       ReturnUrl = ViewBag.ReturnUrl
+   })
     </p>
 }
 

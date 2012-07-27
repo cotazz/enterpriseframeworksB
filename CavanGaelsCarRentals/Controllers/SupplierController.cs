@@ -7,6 +7,8 @@ using CavanGaelsCarRentals.Models;
 using System.IO;
 using CavanGaelsCarRentals.Ingestion;
 using CavanGaelsCarRentals.DataAccess;
+using CavanGaelsCarRentals.Logic;
+using System.Web.Security;
 
 namespace CavanGaelsCarRentals.Controllers
 {
@@ -17,7 +19,14 @@ namespace CavanGaelsCarRentals.Controllers
 
         public ActionResult Index()
         {
-            return View();
+             var email = "";
+             if(User.Identity.IsAuthenticated)
+                  email = Membership.GetUser().Email;
+             UserObj u = CustomUserService.loadUser(email);
+             if (!u.Supplier)
+                  return RedirectToAction("Login", "Account");
+             
+             return View();
         }
 
 
@@ -25,6 +34,12 @@ namespace CavanGaelsCarRentals.Controllers
         [HttpPost]
         public ActionResult Index(HttpPostedFileBase file)
         {
+             var email = "";
+             if (User.Identity.IsAuthenticated)
+                  email = Membership.GetUser().Email;
+             UserObj u = CustomUserService.loadUser(email);
+             if (!u.Supplier)
+                  return RedirectToAction("Login", "Account");
 
              // how to parse a csv using LumenWorks CSV parser, Ref Arian Skehill, Lecturer NCI
              IDataparser csv = new CSVParser();
@@ -40,7 +55,7 @@ namespace CavanGaelsCarRentals.Controllers
              {
                   if (car_ids.Contains(c.car_reg))
                        continue;
-                  c.SupplierId = 1;
+                  c.SupplierId = u.Id();
                   dal.Cars.Add(c);
              }
              dal.SaveChanges();

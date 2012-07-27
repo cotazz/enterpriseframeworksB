@@ -140,11 +140,13 @@
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DataAccess\BookingsDAL.cs" />
     <Compile Include="DataAccess\Repository.cs" />
+    <Compile Include="DataAccess\UserRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Ingestion\CSVParser.cs" />
     <Compile Include="Ingestion\IDataparser.cs" />
+    <Compile Include="Logic\CustomUserService.cs" />
     <Compile Include="Logic\IServiceLayer.cs" />
     <Compile Include="Logic\ServiceLayer.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -159,6 +161,7 @@
     <Compile Include="Models\ui\LocationCarsCount.cs" />
     <Compile Include="Models\ui\LocationsUI.cs" />
     <Compile Include="Models\Unavailable.cs" />
+    <Compile Include="Models\UserObj.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -192,6 +195,7 @@
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="identity.aspx" />
     <Content Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.2.js" />
     <Content Include="Scripts\jquery-1.6.2.min.js" />
@@ -288,6 +292,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Supplier\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\SRegister.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
