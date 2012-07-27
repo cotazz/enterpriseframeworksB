@@ -23,6 +23,16 @@ namespace CavanGaelsCarRentals.Models
           [Column]
           public string location { get; set; }
           [Column]
+          public string car_make { get; set; }
+          [Column]
+          public string car_model { get; set; }
+          [Column]
+          public int number_of_passengers { get; set; }
+          [Column]
+          public string luggage_space { get; set; }
+          [Column]
+          public string image_url { get; set; }
+          [Column]
           public decimal cost_per_day { get; set; }
           [Column]
           float gpsmap_x { get; set; }
