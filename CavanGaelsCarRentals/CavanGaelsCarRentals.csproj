@@ -149,6 +149,15 @@
     <Compile Include="Logic\CustomUserService.cs" />
     <Compile Include="Logic\IServiceLayer.cs" />
     <Compile Include="Logic\ServiceLayer.cs" />
+    <Compile Include="Migrations\201207261021175_InitialCreate.cs" />
+    <Compile Include="Migrations\201207261021175_InitialCreate.Designer.cs">
+      <DependentUpon>201207261021175_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201207271516417_AddUnavailableToBookingAndCars.cs" />
+    <Compile Include="Migrations\201207271516417_AddUnavailableToBookingAndCars.Designer.cs">
+      <DependentUpon>201207271516417_AddUnavailableToBookingAndCars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\BookingConfirmDTO.cs" />

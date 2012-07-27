@@ -79,5 +79,22 @@ namespace CavanGaelsCarRentals.Models
                     
                }
           }
+
+          [Column]
+          public int UnavailableId { get; set; }
+          private EntityRef<Unavailable> _Unavailable = new EntityRef<Unavailable>(); // new prevents null ref exception
+          [Association(Name = "FK_Booking_Unavailable", Storage = "_Unavailable", ThisKey = "UnavailableId", OtherKey = "Id", IsForeignKey = true)]
+          public Unavailable Unavailable
+          {
+               get
+               {
+                    return _Unavailable.Entity;
+               }
+               set
+               {
+
+                    _Unavailable.Entity = value;
+               }
+          }
      }
 }
