@@ -7,12 +7,15 @@
 
 
 <div id="listCars" style="background-color: #FEF; font-size: large; padding: 20px; width: 100%">
-<h2> Listing Cars</h2>
+<h2>Search Results</h2>
+<p>Booking from: @Html.DisplayFor(m => m.fromDate)</p>
+<p>Booking to: @Html.DisplayFor(m => m.toDate)</p>
     <table>
     <tr>
         <th></th>
         <th>Car Reg</th>
         <th>Amount</th>
+        <th>Total Cost</th>
         <th></th>
     </tr>
  
@@ -21,15 +24,17 @@
     <tr><td>
         <img src="" alt="car" />
     </td><td>
-        @Html.DisplayFor(modelItem => car.car_reg)
+        @Html.DisplayFor(modelItem => car.Car.car_reg)
     </td><td>
-        @Html.DisplayFor(modelItem => car.cost_per_day)
+        @Html.DisplayFor(modelItem => car.Car.cost_per_day)
+    </td><td>
+        @Html.DisplayFor(modelItem => car.TotalCost)
     </td>
     <td>@Html.RouteLink("Book", new
    {
        controller = "Booking",
        action = "Create",
-          car_reg = car.car_reg,
+          car_reg = car.Car.car_reg,
           from_year = Model.fromDate.Year,
           from_month = Model.fromDate.Month,
           from_day = Model.fromDate.Day,

@@ -84,6 +84,7 @@ namespace CavanGaelsCarRentals.DataAccess
                         SupplierEmail = supplier.email,
                         CustomerEmail = booking.email,
                         Cost = booking.Car.cost_per_day
+                        
                    };
               }
               return null;
