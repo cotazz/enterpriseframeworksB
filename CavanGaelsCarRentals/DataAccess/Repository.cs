@@ -77,14 +77,16 @@ namespace CavanGaelsCarRentals.DataAccess
               {
                    var car = db.Cars.First(c => c.Id.Equals(booking.CarId));
                    var supplier = db.Suppliers.First(s => s.Id.Equals(car.SupplierId));
+                   var unavailable = db.Unavailabilities.First(u => u.Id.Equals(booking.UnavailableId);
                    return new BookingConfirmDTO
                    {
                         BookingId = booking.Id,
                         CarReg = car.car_reg,
                         SupplierEmail = supplier.email,
                         CustomerEmail = booking.email,
-                        Cost = booking.Car.cost_per_day
-                        
+                        Cost = booking.Car.cost_per_day,
+                        fromDate = unavailable.start_date,
+                        toDate = unavailable.end_date
                    };
               }
               return null;
