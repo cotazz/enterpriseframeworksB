@@ -121,8 +121,12 @@ namespace CavanGaelsCarRentals.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public ActionResult SRegister(RegisterModel model)
+        public ActionResult SRegister(RegisterModel model, string ourCode)
         {
+             if (ourCode != "password")
+             {
+                  return View();
+             }
              if (ModelState.IsValid)
              {
                   // Attempt to register the user

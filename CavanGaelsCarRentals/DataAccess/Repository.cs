@@ -77,7 +77,7 @@ namespace CavanGaelsCarRentals.DataAccess
               {
                    var car = db.Cars.First(c => c.Id.Equals(booking.CarId));
                    var supplier = db.Suppliers.First(s => s.Id.Equals(car.SupplierId));
-                   var unavailable = db.Unavailabilities.First(u => u.Id.Equals(booking.UnavailableId);
+                   var unavailable = db.Unavailabilities.First(u => u.Id.Equals(booking.UnavailableId));
                    return new BookingConfirmDTO
                    {
                         BookingId = booking.Id,

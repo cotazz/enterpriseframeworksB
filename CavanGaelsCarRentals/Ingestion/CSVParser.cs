@@ -40,6 +40,31 @@ namespace CavanGaelsCarRentals.Ingestion
                               carObj.location = csv[i];
 
                          }
+                         else if (headers[i].Equals("car_make"))
+                         {
+                              carObj.car_make= csv[i];
+
+                         }
+                         else if (headers[i].Equals("car_model"))
+                         {
+                              carObj.car_model = csv[i];
+
+                         }
+                         else if (headers[i].Equals("number_of_passengers"))
+                         {
+                              carObj.number_of_passengers = Convert.ToInt32(csv[i]);
+
+                         }
+                         else if (headers[i].Equals("luggage_space"))
+                         {
+                              carObj.luggage_space = csv[i];
+
+                         }
+                         else if (headers[i].Equals("image_url"))
+                         {
+                              carObj.image_url = csv[i];
+
+                         }
                          ret.Add(carObj);
                     }
                }
