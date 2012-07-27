@@ -40,7 +40,7 @@ namespace CavanGaelsCarRentals.Controllers
         // POST: /User/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+         public ActionResult Create(FormCollection collection)
         {
             
                 return View();
