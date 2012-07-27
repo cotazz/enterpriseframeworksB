@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using CavanGaelsCarRentals.Models;
+using CavanGaelsCarRentals.Logic;
 
 namespace CavanGaelsCarRentals.Controllers
 {
@@ -68,8 +69,9 @@ namespace CavanGaelsCarRentals.Controllers
         // GET: /Account/Register
 
         [AllowAnonymous]
-        public ActionResult Register()
+        public ActionResult Register(string returnUrl)
         {
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
@@ -78,7 +80,7 @@ namespace CavanGaelsCarRentals.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public ActionResult Register(RegisterModel model)
+        public ActionResult Register(RegisterModel model, string returnUrl)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +91,11 @@ namespace CavanGaelsCarRentals.Controllers
                 if (createStatus == MembershipCreateStatus.Success)
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
-                    return RedirectToAction("Index", "Home");
+                    CustomUserService.CreateCustomer(model.Email);
+                    if (Url.IsLocalUrl(returnUrl))
+                         return Redirect(returnUrl);
+                    else
+                         return RedirectToAction("Index", "Home");
                 }
                 else
                 {
@@ -99,6 +105,44 @@ namespace CavanGaelsCarRentals.Controllers
 
             // If we got this far, something failed, redisplay form
             return View(model);
+        }
+
+        //
+        // GET: /Account/Register
+
+        [AllowAnonymous]
+        public ActionResult SRegister()
+        {
+             return View();
+        }
+
+        //
+        // POST: /Account/Register
+
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult SRegister(RegisterModel model)
+        {
+             if (ModelState.IsValid)
+             {
+                  // Attempt to register the user
+                  MembershipCreateStatus createStatus;
+                  Membership.CreateUser(model.UserName, model.Password, model.Email, passwordQuestion: null, passwordAnswer: null, isApproved: true, providerUserKey: null, status: out createStatus);
+
+                  if (createStatus == MembershipCreateStatus.Success)
+                  {
+                       FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
+                       CustomUserService.CreateSupplier(model.Email);
+                       return RedirectToAction("Index", "Home");
+                  }
+                  else
+                  {
+                       ModelState.AddModelError("", ErrorCodeToString(createStatus));
+                  }
+             }
+
+             // If we got this far, something failed, redisplay form
+             return View(model);
         }
 
         //

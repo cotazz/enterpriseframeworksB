@@ -93,7 +93,7 @@ namespace CavanGaelsCarRentals.Logic
                   
         }
 
-        public Models.ui.BookingConfirmUI ShowBookingConfirm(Models.ui.BookingCreateUI car)
+        public Models.ui.BookingConfirmUI ShowBookingConfirm(Models.ui.BookingCreateUI car, int userId)
         {
              var result = new BookingConfirmUI();
 
@@ -125,7 +125,7 @@ namespace CavanGaelsCarRentals.Logic
              car.valid = booking.valid(unavailabilities);
              car.amount = booking.getTotalCost();
              UnavailableDateBObj date = booking.create();
-             var customer_id = 1;
+             var customer_id = userId;
              db.createNewBooking(customer_id, carId, startDate, endDate);
 
              result.BookingId = 21425;
