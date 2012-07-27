@@ -13,6 +13,8 @@ namespace CavanGaelsCarRentals.Models.ui
           public string SupplierEmail { get; set; }
           public string CustomerEmail { get; set; }
           public int BookingId { get; set; }
-          public Decimal CostPerDay { get; set; }
+          public Decimal Cost { get; set; }
+          public DateTime fromDate { get; set; }
+          public DateTime toDate { get; set; }
      }
 }

@@ -134,7 +134,7 @@ namespace CavanGaelsCarRentals.Logic
 
              }
              result.CarReg = car_reg;
-             result.CostPerDay = booking.getTotalCost();
+             result.Cost = booking.getTotalCost();
              return result;
         }
 
@@ -146,7 +146,7 @@ namespace CavanGaelsCarRentals.Logic
              if (b != null)
              {
                   result.CarReg = b.CarReg;
-                  result.CostPerDay = b.CostPerDay;
+                  result.Cost = b.Cost;
                   result.CustomerEmail = b.CustomerEmail;
                   result.SupplierEmail = b.SupplierEmail;
              }

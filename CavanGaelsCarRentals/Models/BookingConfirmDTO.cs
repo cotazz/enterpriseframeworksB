@@ -11,7 +11,9 @@ namespace CavanGaelsCarRentals.Models
           public string CarReg { get; set; }
           public string SupplierEmail { get; set; }
           public string CustomerEmail { get; set; }
-          public decimal CostPerDay {get; set;}
+          public Decimal Cost { get; set; }
+          public DateTime fromDate { get; set; }
+          public DateTime toDate { get; set; }
           
      }
 }

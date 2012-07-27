@@ -29,7 +29,8 @@ namespace CavanGaelsCarRentals.Controllers
 
          //
          // GET: /Booking/Create
-        public ActionResult Create(string car_reg, DateTime fromdate, DateTime todate, string place)
+        public ActionResult Create(string car_reg, string place, int from_year, int from_month, int from_day,
+             int to_year, int to_month, int to_day)
         {
 
              var email = "";
@@ -41,9 +42,15 @@ namespace CavanGaelsCarRentals.Controllers
                   return RedirectToAction("Login", "Account", new
                   {
                        returnUrl = "/Booking/Create?car_reg=" + car_reg + 
-                       "&fromdate=" + fromdate + "&todate=" + todate + "&place=" + place
+                       "&from_year=" + from_year + "&from_month=" + from_month + "&from_day=" +
+                       from_day + "&to_year=" + to_year + "&to_month=" + to_month +  "&to_day=" +
+                       to_day + "&place=" + place
                   });
              }
+             var from_string = from_year + "/" + from_month + "/" + from_day;
+             DateTime fromdate = DateTime.ParseExact(from_string, "yyyy/M/d", null);
+             var to_string = to_year + "/" + to_month + "/" + to_day;
+             DateTime todate = DateTime.ParseExact(to_string, "yyyy/M/d", null);
 
 
             BookingCreateUI showChosenCar = new BookingCreateUI();
@@ -92,7 +99,8 @@ namespace CavanGaelsCarRentals.Controllers
                   email = Membership.GetUser().Email;
              UserObj u = CustomUserService.loadUser(email);
              if (!u.Customer)
-                  return RedirectToAction("Login", "Account");
+                  return RedirectToAction("Login", "Account", new { 
+                       returnUrl = "/Booking/Confirm?booking_id=" + booking_id  } );
              BookingConfirmUI bookingConfirm = new BookingConfirmUI();
              bookingConfirm = logic.ShowBookingConfirm(booking_id, u.Id());
              return View(bookingConfirm);
