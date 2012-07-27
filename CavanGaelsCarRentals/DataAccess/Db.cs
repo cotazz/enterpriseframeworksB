@@ -16,11 +16,8 @@ namespace CavanGaelsCarRentals.DataAccess
           public DbSet<Booking> Bookings { get; set; }
           public DbSet<Supplier> Suppliers { get; set; }
           public Db()
-          {
-               var cs = "Server=tcp:ygir540x4r.data" + "base.win" + "dows.net,1433;Database=cavangaels; User ID=ca" +
-                    "vangaels12345@ygir540x4r; P" +"ass" + "wor" + "d=What'supdoc" +
-                    "?;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
-               this.Database.Connection.ConnectionString = cs;
+               : base ("name=DefaultConnection")
+          {         
           }
 
      }
