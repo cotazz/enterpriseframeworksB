@@ -70,6 +70,7 @@ namespace CavanGaelsCarRentals.Controllers
         // POST: /Booking/Create
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(BookingCreateUI booking)
         {
              var email = "";
