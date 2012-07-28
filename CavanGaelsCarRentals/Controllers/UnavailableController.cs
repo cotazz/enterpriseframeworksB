@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.Mvc;
 using CavanGaelsCarRentals.Models;
 using CavanGaelsCarRentals.DataAccess;
+using CavanGaelsCarRentals.Logic;
+using System.Web.Security;
 
 namespace CavanGaelsCarRentals.Controllers
 {
@@ -19,8 +21,16 @@ namespace CavanGaelsCarRentals.Controllers
 
         public ActionResult Index()
         {
-            var unavailabilities = db.Unavailabilities.Include(u => u.Car);
-            return View(unavailabilities.ToList());
+             var email = "";
+             if (User.Identity.IsAuthenticated)
+                  email = Membership.GetUser().Email;
+             UserObj u = CustomUserService.loadUser(email);
+             if (!u.Supplier)
+                  return RedirectToAction("Login", "Account");
+             var supplier_id = u.Id();
+            var unavailabilities = db.Unavailabilities.Include(un => un.Car);
+            var result = unavailabilities.Where(una => una.Car.SupplierId == supplier_id);
+            return View(result.ToList());
         }
 
         //

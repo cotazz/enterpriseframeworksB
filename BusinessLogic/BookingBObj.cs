@@ -38,6 +38,12 @@ namespace BusinessLogic
                return _supplier;
           }
 
+          /// <summary>
+          /// Takes a start date in the future and number of days 
+          /// to return date
+          /// </summary>
+          /// <param name="startDate">DateTime in the future</param>
+          /// <param name="numberOfDays">Number of days must be at least 1</param>
           public void setBookingRange(DateTime startDate, int numberOfDays)
           {
               if (startDate < DateTime.Now)
@@ -51,6 +57,14 @@ namespace BusinessLogic
                 this._numberOfDays = numberOfDays;
 
               this._toDate = startDate.AddDays(numberOfDays);
+          }
+
+          public void setBookingRange(DateTime startDate, DateTime endDate)
+          {
+
+               TimeSpan span = endDate - startDate;
+               int numberOfDays = span.Days;
+               this.setBookingRange(startDate, numberOfDays);
           }
 
           public void setCustomer(CustomerBObj c)
@@ -68,13 +82,7 @@ namespace BusinessLogic
               return _fromDate;
           }
 
-          public void setBookingRange(DateTime startDate, DateTime endDate)
-          {
-                           
-               TimeSpan span = endDate - startDate;
-               int numberOfDays = span.Days;
-               this.setBookingRange(startDate, numberOfDays);
-          }
+          
 
 
           public Decimal getTotalCost()

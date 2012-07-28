@@ -47,21 +47,30 @@ namespace Test1
             Assert.AreEqual(pickupDate, booking.startDate());
         }
 
+         /// <summary>
+         /// This test ensures pickup date can not be in the past
+         /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void it_fails_if_pickup_date_is_in_the_past()
         {
-            DateTime pickupDate = new DateTime(2011, 12, 31);
 
+             // 1. Arrange
+            DateTime pickupDate = new DateTime(2011, 12, 31);
             var booking = BookingBObj.newBooking(new CarBObj(new SupplierBObj()));
+
+             // 2. Act
             booking.setBookingRange(pickupDate, 10);
 
+             // 3. Assert - if the test gets this far, there is a problem!
             Assert.Fail("Message Constructor should have thrown an exception");
 
 
         }
     
-
+         /// <summary>
+         /// The pickup date must be before the return date
+         /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void booking_end_date_Should_be_after_start_date()
@@ -106,13 +115,13 @@ namespace Test1
             DateTime pickupDate = new DateTime(2012, 12, 31);
 
             var car = new CarBObj(new SupplierBObj());
-            car.setDailyRate(50);
+            car.setDailyRate(30);
 
             var booking = BookingBObj.newBooking(car);
             booking.setBookingRange(pickupDate, 10);
 
             Assert.AreEqual(car.dailyRate() * 10, booking.getTotalCost());
-
+            Assert.AreEqual(300, booking.getTotalCost());
         }
 
          [TestMethod]
@@ -187,6 +196,7 @@ namespace Test1
               Assert.AreEqual(booking.create().ToString() , unavailable.ToString() );
 
          }
+
     }
 }
 

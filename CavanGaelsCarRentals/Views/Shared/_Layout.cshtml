@@ -23,7 +23,7 @@
 
 <ul>
 <li class="home">@Html.ActionLink("Home", "Index", "Home")</li>
-<li class="rent"> @Html.ActionLink("New Booking","Create", "Booking")</li>
+<li class="rent"> @Html.ActionLink("Supplier Portal", "Index", "Supplier")</li>
 <li class="reservation"><a href="#" title="Reservation">Reservation</a></li>
 <li class="vehicles"><a href="#" title="Vehicles">Vehicles</a></li>
 <li class="contacts">@Html.ActionLink("Contact", "Contact", "Home")</li>
@@ -37,7 +37,9 @@
 
 
             @RenderSection("featured", required: false)
+            <div id="suppliercolor">
                 @RenderBody()
+                
                 </div>
 
 </div>

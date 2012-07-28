@@ -25,6 +25,7 @@ namespace CavanGaelsCarRentals.DataAccess
 
          public IEnumerable<Car> listAvailableCars(string location, DateTime fromDate, DateTime toDate)
          {
+              // Select only cars that are available between the dates
               var query = from Car in db.Cars where
                           Car.location.Equals(location)
                           && Car.Unavailablile.All(
@@ -90,6 +91,11 @@ namespace CavanGaelsCarRentals.DataAccess
                    };
               }
               return null;
+         }
+
+         public Car getCar(int id)
+         {
+              return db.Cars.FirstOrDefault(c => c.Id.Equals(id));
          }
 
 

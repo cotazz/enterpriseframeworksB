@@ -6,7 +6,7 @@ ul{list-style-type:none;}
 .clear {clear: both; margin: 0px}
 .spacer{font-size:0; line-height:10px; clear:both;}
 #mainbody {margin:0 auto;  background:url(../images/b_top.jpg) repeat-x;}
-
+#backgroundcolor {background-color: rgba(0,0,0,0.9);}
 /* CONTENT */
 
 #content{width:719px; margin:0 auto; position:relative;}

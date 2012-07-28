@@ -117,8 +117,9 @@ namespace CavanGaelsCarRentals.Logic
 
              var carId = db.getCarIdByReg(car_reg);
 
-
+             Car carDb = db.getCar(carId);
              carObj.setId(carId);
+             carObj.setDailyRate(carDb.cost_per_day);
 
              booking.setBookingRange(startDate, endDate);
 
